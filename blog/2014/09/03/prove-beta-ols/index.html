@@ -5,17 +5,17 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang=""><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Privacy Policy - 玩儿数据</title>
+  <title>证明多元回归系数的最小二乘性 - 玩儿数据</title>
   <meta name="author" content="王轶楠">
   
   
-  <meta name="description" content=" Privacy Policy Recent Posts 证明多元回归系数的最小二乘性 《统计模型：理论与实践》第四章：多元回归-读书笔记 新浪微博 My Douban 访客地图 ">
-  
-  <meta property="og:title" content="Privacy Policy" />
+  <meta name="description" content="统计模型：理论与实践 第四章：多元回归 笔记">
+  <meta name="keywords" content="统计模型 多元回归 最小二乘 beta">
+  <meta property="og:title" content="证明多元回归系数的最小二乘性" />
   <meta property="og:type" content="blog" />
-  <meta property="og:description" content=" Privacy Policy Recent Posts 证明多元回归系数的最小二乘性 《统计模型：理论与实践》第四章：多元回归-读书笔记 新浪微博 My Douban 访客地图 ">
+  <meta property="og:description" content="统计模型：理论与实践 第四章：多元回归 笔记">
   
-  <meta property="og:url" content="http://wangyinanchina.github.io/privacy/" />
+  <meta property="og:url" content="http://wangyinanchina.github.io/blog/2014/09/03/prove-beta-ols/" />
   
   
   
@@ -31,7 +31,7 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <link rel="canonical" href="http://wangyinanchina.github.io/privacy/">
+  <link rel="canonical" href="http://wangyinanchina.github.io/blog/2014/09/03/prove-beta-ols/">
   <link href="/favicon.png" rel="icon">
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -122,16 +122,16 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div><!-- page -->
-  <article role="article">
-    
+      <div><!-- post -->
+<article class="hentry" role="article" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+  
 
 <!--
 <rdf:RDF
 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 xmlns:dc="http://purl.org/dc/elements/1.1/"
 xmlns:foaf="http://xmlns.com/foaf/0.1/">
-<rdf:Description rdf:about="http://wangyinanchina.github.io/privacy/index.html">
+<rdf:Description rdf:about="http://wangyinanchina.github.io/blog/2014/09/03/prove-beta-ols/">
 <foaf:maker rdf:parseType="Resource">
 <foaf:holdsAccount>
 <foaf:OnlineAccount foaf:accountName="">
@@ -153,10 +153,12 @@ xmlns:foaf="http://xmlns.com/foaf/0.1/">
 </article>
 
 
-    <!-- google_ad_section_start -->
+  <!-- google_ad_section_start -->
+  
+<header>
+  
+  <p class="meta">
     
-    <header>
-      <p class="meta">
 
 
 
@@ -169,9 +171,123 @@ xmlns:foaf="http://xmlns.com/foaf/0.1/">
 
 
 
-<time datetime="2013-03-07T12:00:00+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated"></time></p>
-      <h1 class="entry-title">Privacy Policy</h1>
-    </header>
+<time datetime="2014-09-03T20:42:17+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated"></time>
+    
+
+<span class="categories">
+  Posted in
+  
+    <a class='category' href='/blog/categories/duo-yuan-hui-gui/'>多元回归</a>, <a class='category' href='/blog/categories/zheng-ming/'>证明</a>
+  
+</span>
+
+
+    
+
+
+  </p>
+  
+  
+  
+  <h1 class="entry-title" itemprop="name headline">证明多元回归系数的最小二乘性</h1>
+  
+  
+  
+</header>
+
+
+<div class="sharing">
+  <ul>
+    
+    
+    
+    
+    
+    
+    
+    
+  </ul>
+</div>
+
+
+
+
+<div class="entry-content">
+  <div class="group">
+    
+    <p>在多元回归中，我们知道对方程$$Y = X\beta + \epsilon$$中$$$\beta$$$的OLS（通常最小二乘）估计为$$$\widehat{\beta} = (X&#8217;X)^{-1}X&#8217;Y$$$,下面来证明该性质：</p>
+
+
+  </div>
+  <!-- more -->
+  <div class="group">
+    <p>在多元回归中，我们知道对方程$$Y = X\beta + \epsilon$$中$$$\beta$$$的OLS（通常最小二乘）估计为$$$\widehat{\beta} = (X&#8217;X)^{-1}X&#8217;Y$$$,下面来证明该性质：</p>
+
+<!--more-->
+
+
+<blockquote><p>令$$d(||Y - X\beta||^2) / d\beta = -2\sum_{i=1}^{n}X_i(Y_i - X_i\beta) = 0$$
+则$$\beta X&#8217;X - X&#8217;Y = 0$$
+即$$\beta = (X&#8217;X)^{-1}X&#8217;Y时||Y - X\beta||^2有最小值$$
+原式得证。</p></blockquote>
+
+<p>另一种证明方法是:</p>
+
+<blockquote><p>$$||Y - X\beta||^2 = ||Y - X\widehat{\beta} + X\widehat{\beta} - X\beta||^2 = ||Y - X\widehat{\beta}||^2 + ||X\widehat{\beta} - X\beta||^2 + 2||(Y - X\widehat{\beta})&lsquo;(X\widehat{\beta} - X\beta)||$$ 因为：$$(Y - X\widehat{\beta})&rsquo;(X\widehat{\beta} - X\beta) = Y&#8217;X\widehat{\beta} - YX\beta - \widehat{\beta}&lsquo;X&#8217;X\widehat{\beta} + \widehat{\beta}&#8217;X&#8217;X\beta = Y&#8217;X\widehat{\beta} - YX\beta - Y&#8217;X(X&#8217;X)^{-1}X&#8217;X\widehat{\beta} + Y&#8217;X(X&#8217;X)^{-1}X&#8217;X\beta = 0$$所以当 $$$||X\widehat{\beta} - X\beta||^2$$$最小时$$$||Y - X\beta||^2$$$得到最小值，即$$$\beta = \widehat{\beta}$$$，原式得证。</p></blockquote>
+
+  </div>
+</div>
+<!-- </div><footer> * pseudo line for the function raw_content() &#8211;>
+
+
+
+  <!-- google_ad_section_end -->
+  <footer>
+    
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard" itemscope itemtype="http://schema.org/Person">Posted by <span class="fn" itemprop="name">王轶楠</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+<time datetime="2014-09-03T20:42:17+08:00" class="updated"  data-updated="true" itemprop="dateModified"></time>
+      
+
+<span class="categories">
+  Posted in
+  
+    <a class='category' href='/blog/categories/duo-yuan-hui-gui/'>多元回归</a>, <a class='category' href='/blog/categories/zheng-ming/'>证明</a>
+  
+</span>
+
+
+      
+
+
+    </p>
+    
+    <div class="related_posts">
+<h3>You may also like&#8230;</h3>
+<ul>
+
+<li><a href="/blog/2014/09/03/tong-ji-mo-xing-duo-yuan-hui-gui/">《统计模型：理论与实践》第四章：多元回归-读书笔记</a></li>
+
+</ul>
+</div>
+
     
     
     
@@ -189,18 +305,39 @@ xmlns:foaf="http://xmlns.com/foaf/0.1/">
 </div>
 
     
-    
-    <div class="entry-content">
-    
+    <p class="meta">
+      
+      <a class="basic-alignment left" href="/blog/2014/09/03/tong-ji-mo-xing-duo-yuan-hui-gui/" title="Previous Post: 《统计模型：理论与实践》第四章：多元回归-读书笔记">&laquo; 《统计模型：理论与实践》第四章：多元回归-读书笔记</a>
+      
+      
+    </p>
+  </footer>
+</article>
 
-    </div>
-    
-    <!-- google_ad_section_end -->
-    
-  </article>
+
+<section>
+
+
+</section>
+
+
+
+
+<div class="center_wrapper">
   
-  
-</div><!-- page -->
+
+</div>
+
+
+
+
+<section>
+
+
+</section>
+
+
+</div><!-- post -->
 
 <aside class="sidebar">
   

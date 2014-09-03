@@ -5,17 +5,17 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang=""><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Privacy Policy - 玩儿数据</title>
+  <title>《统计模型：理论与实践》第四章：多元回归-读书笔记 - 玩儿数据</title>
   <meta name="author" content="王轶楠">
   
   
-  <meta name="description" content=" Privacy Policy Recent Posts 证明多元回归系数的最小二乘性 《统计模型：理论与实践》第四章：多元回归-读书笔记 新浪微博 My Douban 访客地图 ">
-  
-  <meta property="og:title" content="Privacy Policy" />
+  <meta name="description" content="统计模型：理论与实践 第四章：多元回归 笔记">
+  <meta name="keywords" content="统计模型 多元回归">
+  <meta property="og:title" content="《统计模型：理论与实践》第四章：多元回归-读书笔记" />
   <meta property="og:type" content="blog" />
-  <meta property="og:description" content=" Privacy Policy Recent Posts 证明多元回归系数的最小二乘性 《统计模型：理论与实践》第四章：多元回归-读书笔记 新浪微博 My Douban 访客地图 ">
+  <meta property="og:description" content="统计模型：理论与实践 第四章：多元回归 笔记">
   
-  <meta property="og:url" content="http://wangyinanchina.github.io/privacy/" />
+  <meta property="og:url" content="http://wangyinanchina.github.io/blog/2014/09/03/tong-ji-mo-xing-duo-yuan-hui-gui/" />
   
   
   
@@ -31,7 +31,7 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <link rel="canonical" href="http://wangyinanchina.github.io/privacy/">
+  <link rel="canonical" href="http://wangyinanchina.github.io/blog/2014/09/03/tong-ji-mo-xing-duo-yuan-hui-gui/">
   <link href="/favicon.png" rel="icon">
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -122,16 +122,16 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div><!-- page -->
-  <article role="article">
-    
+      <div><!-- post -->
+<article class="hentry" role="article" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+  
 
 <!--
 <rdf:RDF
 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 xmlns:dc="http://purl.org/dc/elements/1.1/"
 xmlns:foaf="http://xmlns.com/foaf/0.1/">
-<rdf:Description rdf:about="http://wangyinanchina.github.io/privacy/index.html">
+<rdf:Description rdf:about="http://wangyinanchina.github.io/blog/2014/09/03/tong-ji-mo-xing-duo-yuan-hui-gui/">
 <foaf:maker rdf:parseType="Resource">
 <foaf:holdsAccount>
 <foaf:OnlineAccount foaf:accountName="">
@@ -153,10 +153,12 @@ xmlns:foaf="http://xmlns.com/foaf/0.1/">
 </article>
 
 
-    <!-- google_ad_section_start -->
+  <!-- google_ad_section_start -->
+  
+<header>
+  
+  <p class="meta">
     
-    <header>
-      <p class="meta">
 
 
 
@@ -169,9 +171,122 @@ xmlns:foaf="http://xmlns.com/foaf/0.1/">
 
 
 
-<time datetime="2013-03-07T12:00:00+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated"></time></p>
-      <h1 class="entry-title">Privacy Policy</h1>
-    </header>
+<time datetime="2014-09-03T17:16:23+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated"></time>
+    
+
+<span class="categories">
+  Posted in
+  
+    <a class='category' href='/blog/categories/duo-yuan-hui-gui/'>多元回归</a>, <a class='category' href='/blog/categories/tong-ji-mo-xing/'>统计模型</a>
+  
+</span>
+
+
+    
+
+
+  </p>
+  
+  
+  
+  <h1 class="entry-title" itemprop="name headline">《统计模型：理论与实践》第四章：多元回归-读书笔记</h1>
+  
+  
+  
+</header>
+
+
+<div class="sharing">
+  <ul>
+    
+    
+    
+    
+    
+    
+    
+    
+  </ul>
+</div>
+
+
+
+
+<div class="entry-content">
+  <div class="group">
+    
+    <p>多元回归和单变量回归类似，目的是探索自变量和因变量的关系，以及对因变量的取值给予预测。</p>
+
+
+  </div>
+  <!-- more -->
+  <div class="group">
+    <p>多元回归和单变量回归类似，目的是探索自变量和因变量的关系，以及对因变量的取值给予预测。</p>
+
+<!--more-->
+
+
+<p>由于多元回归包含多个自变量，因此要复杂一些。通常情况下，我们假设自变量为矩阵$$$X$$$，因变量向量为$$$Y$$$，随机误差为$$$\epsilon$$$，那么，我们认为他们之间的关系是：$$Y = X\beta + \epsilon \qquad(1)$$
+显然$$$X, Y, \beta以及\epsilon$$$都是随机变量，我们往往能够从数据中得到$$$X$$$和$$$Y$$$的一些观测值，但是仅有这些并不足以使我们推断出$$$\beta$$$，例如我们可以使$$$\beta$$$为任意值，只要调整$$$\epsilon$$$即可。所以，我们还需要一些假设来帮助我们推断$$$\beta$$$。通常我们假设：$$X与\epsilon独立，即X\perp\perp\epsilon \qquad(2)$$
+以及$$$\epsilon_i$$$独立同分布，并且$$$E(\epsilon_i) = 0, var(\epsilon_i) = \sigma<sup>2</sup>$$$</p>
+
+<p>以上两个假设对$$$\epsilon$$$的取值做了限制，使得我们有可能去估计$$$\beta$$$。通常我们选择OLS估计量$$$\widehat{\beta} = (X&#8217;X)^{-1}X&#8217;Y$$$来估计$$$\beta$$$，并且定义残差为:$$e = Y - X\widehat{\beta} \qquad(4)$$
+可以证明，当$$$\beta = \widehat{\beta}时，sum(e<sup>2</sup>)最小$$$,并且$$$e和X正交，即e\perp X$$$.
+在这里，需要注意$$$e和\epsilon$$$的区别: $$$\epsilon$$$是随机误差，无法观测，也无法估计，我们只能假定它的分布、期望和方差。而e是可以观测的，当我们得到$$$\widehat{\beta}$$$之后，我们也就得到了e，并且通常会用e的平方和的大小去评价一个回归模型的好坏。除此之外，$$$\epsilon$$$与$$$X$$$ <strong>独立</strong>而不一定正交，而$$$e与X$$$ <strong>正交</strong>，但并不独立。</p>
+
+  </div>
+</div>
+<!-- </div><footer> * pseudo line for the function raw_content() &#8211;>
+
+
+
+  <!-- google_ad_section_end -->
+  <footer>
+    
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard" itemscope itemtype="http://schema.org/Person">Posted by <span class="fn" itemprop="name">王轶楠</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+<time datetime="2014-09-03T17:16:23+08:00" class="updated"  data-updated="true" itemprop="dateModified"></time>
+      
+
+<span class="categories">
+  Posted in
+  
+    <a class='category' href='/blog/categories/duo-yuan-hui-gui/'>多元回归</a>, <a class='category' href='/blog/categories/tong-ji-mo-xing/'>统计模型</a>
+  
+</span>
+
+
+      
+
+
+    </p>
+    
+    <div class="related_posts">
+<h3>You may also like&#8230;</h3>
+<ul>
+
+<li><a href="/blog/2014/09/03/prove-beta-ols/">证明多元回归系数的最小二乘性</a></li>
+
+</ul>
+</div>
+
     
     
     
@@ -189,18 +304,39 @@ xmlns:foaf="http://xmlns.com/foaf/0.1/">
 </div>
 
     
-    
-    <div class="entry-content">
-    
+    <p class="meta">
+      
+      
+      <a class="basic-alignment right" href="/blog/2014/09/03/prove-beta-ols/" title="Next Post: 证明多元回归系数的最小二乘性">证明多元回归系数的最小二乘性 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
 
-    </div>
-    
-    <!-- google_ad_section_end -->
-    
-  </article>
+
+<section>
+
+
+</section>
+
+
+
+
+<div class="center_wrapper">
   
-  
-</div><!-- page -->
+
+</div>
+
+
+
+
+<section>
+
+
+</section>
+
+
+</div><!-- post -->
 
 <aside class="sidebar">
   

@@ -5,7 +5,7 @@
   <link href="http://wangyinanchina.github.io/atom.xml" rel="self"/>
   <link href="http://wangyinanchina.github.io/"/>
   
-  <updated>2014-09-03T16:43:39+08:00</updated>
+  <updated>2014-09-03T22:07:52+08:00</updated>
   <id>http://wangyinanchina.github.io/</id>
   <author>
     <name><![CDATA[王轶楠]]></name>
@@ -13,5 +13,25 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[证明多元回归系数的最小二乘性]]></title>
+    <link href="http://wangyinanchina.github.io/blog/2014/09/03/prove-beta-ols/"/>
+    <updated>2014-09-03T20:42:17+08:00</updated>
+    <id>http://wangyinanchina.github.io/blog/2014/09/03/prove-beta-ols</id>
+    <content type="html"><![CDATA[<p>在多元回归中，我们知道对方程$$Y = X\beta + \epsilon$$中$$$\beta$$$的OLS（通常最小二乘）估计为$$$\widehat{\beta} = (X&#8217;X)^{-1}X&#8217;Y$$$,下面来证明该性质：</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[《统计模型：理论与实践》第四章：多元回归-读书笔记]]></title>
+    <link href="http://wangyinanchina.github.io/blog/2014/09/03/tong-ji-mo-xing-duo-yuan-hui-gui/"/>
+    <updated>2014-09-03T17:16:23+08:00</updated>
+    <id>http://wangyinanchina.github.io/blog/2014/09/03/tong-ji-mo-xing-duo-yuan-hui-gui</id>
+    <content type="html"><![CDATA[<p>多元回归和单变量回归类似，目的是探索自变量和因变量的关系，以及对因变量的取值给予预测。</p>
+
+]]></content>
+  </entry>
   
 </feed>

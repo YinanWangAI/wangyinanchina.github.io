@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: 多元回归 | 玩儿数据]]></title>
+  <link href="http://wangyinanchina.github.io/blog/categories/duo-yuan-hui-gui/atom.xml" rel="self"/>
+  <link href="http://wangyinanchina.github.io/"/>
+  <updated>2014-09-03T22:07:52+08:00</updated>
+  <id>http://wangyinanchina.github.io/</id>
+  <author>
+    <name><![CDATA[王轶楠]]></name>
+    <email><![CDATA[Yinan.wang@pku.edu.cn]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[证明多元回归系数的最小二乘性]]></title>
+    <link href="http://wangyinanchina.github.io/blog/2014/09/03/prove-beta-ols/"/>
+    <updated>2014-09-03T20:42:17+08:00</updated>
+    <id>http://wangyinanchina.github.io/blog/2014/09/03/prove-beta-ols</id>
+    <content type="html"><![CDATA[<p>在多元回归中，我们知道对方程$$Y = X\beta + \epsilon$$中$$$\beta$$$的OLS（通常最小二乘）估计为$$$\widehat{\beta} = (X&#8217;X)^{-1}X&#8217;Y$$$,下面来证明该性质：</p>
+
+<!--more-->
+
+
+<blockquote><p>令$$d(||Y - X\beta||^2) / d\beta = -2\sum_{i=1}^{n}X_i(Y_i - X_i\beta) = 0$$
+则$$\beta X&#8217;X - X&#8217;Y = 0$$
+即$$\beta = (X&#8217;X)^{-1}X&#8217;Y时||Y - X\beta||^2有最小值$$
+原式得证。</p></blockquote>
+
+<p>另一种证明方法是:</p>
+
+<blockquote><p>$$||Y - X\beta||^2 = ||Y - X\widehat{\beta} + X\widehat{\beta} - X\beta||^2 = ||Y - X\widehat{\beta}||^2 + ||X\widehat{\beta} - X\beta||^2 + 2||(Y - X\widehat{\beta})&lsquo;(X\widehat{\beta} - X\beta)||$$ 因为：$$(Y - X\widehat{\beta})&rsquo;(X\widehat{\beta} - X\beta) = Y&#8217;X\widehat{\beta} - YX\beta - \widehat{\beta}&lsquo;X&#8217;X\widehat{\beta} + \widehat{\beta}&#8217;X&#8217;X\beta = Y&#8217;X\widehat{\beta} - YX\beta - Y&#8217;X(X&#8217;X)^{-1}X&#8217;X\widehat{\beta} + Y&#8217;X(X&#8217;X)^{-1}X&#8217;X\beta = 0$$所以当 $$$||X\widehat{\beta} - X\beta||^2$$$最小时$$$||Y - X\beta||^2$$$得到最小值，即$$$\beta = \widehat{\beta}$$$，原式得证。</p></blockquote>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[《统计模型：理论与实践》第四章：多元回归-读书笔记]]></title>
+    <link href="http://wangyinanchina.github.io/blog/2014/09/03/tong-ji-mo-xing-duo-yuan-hui-gui/"/>
+    <updated>2014-09-03T17:16:23+08:00</updated>
+    <id>http://wangyinanchina.github.io/blog/2014/09/03/tong-ji-mo-xing-duo-yuan-hui-gui</id>
+    <content type="html"><![CDATA[<p>多元回归和单变量回归类似，目的是探索自变量和因变量的关系，以及对因变量的取值给予预测。</p>
+
+<!--more-->
+
+
+<p>由于多元回归包含多个自变量，因此要复杂一些。通常情况下，我们假设自变量为矩阵$$$X$$$，因变量向量为$$$Y$$$，随机误差为$$$\epsilon$$$，那么，我们认为他们之间的关系是：$$Y = X\beta + \epsilon \qquad(1)$$
+显然$$$X, Y, \beta以及\epsilon$$$都是随机变量，我们往往能够从数据中得到$$$X$$$和$$$Y$$$的一些观测值，但是仅有这些并不足以使我们推断出$$$\beta$$$，例如我们可以使$$$\beta$$$为任意值，只要调整$$$\epsilon$$$即可。所以，我们还需要一些假设来帮助我们推断$$$\beta$$$。通常我们假设：$$X与\epsilon独立，即X\perp\perp\epsilon \qquad(2)$$
+以及$$$\epsilon_i$$$独立同分布，并且$$$E(\epsilon_i) = 0, var(\epsilon_i) = \sigma<sup>2</sup>$$$</p>
+
+<p>以上两个假设对$$$\epsilon$$$的取值做了限制，使得我们有可能去估计$$$\beta$$$。通常我们选择OLS估计量$$$\widehat{\beta} = (X&#8217;X)^{-1}X&#8217;Y$$$来估计$$$\beta$$$，并且定义残差为:$$e = Y - X\widehat{\beta} \qquad(4)$$
+可以证明，当$$$\beta = \widehat{\beta}时，sum(e<sup>2</sup>)最小$$$,并且$$$e和X正交，即e\perp X$$$.
+在这里，需要注意$$$e和\epsilon$$$的区别: $$$\epsilon$$$是随机误差，无法观测，也无法估计，我们只能假定它的分布、期望和方差。而e是可以观测的，当我们得到$$$\widehat{\beta}$$$之后，我们也就得到了e，并且通常会用e的平方和的大小去评价一个回归模型的好坏。除此之外，$$$\epsilon$$$与$$$X$$$ <strong>独立</strong>而不一定正交，而$$$e与X$$$ <strong>正交</strong>，但并不独立。</p>
+]]></content>
+  </entry>
+  
+</feed>

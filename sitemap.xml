@@ -2,45 +2,57 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   
+  <url>
+    <loc>http://wangyinanchina.github.io/blog/2014/09/03/prove-beta-ols/</loc>
+    <lastmod>2014-09-03T20:42:17+08:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://wangyinanchina.github.io/blog/2014/09/03/tong-ji-mo-xing-duo-yuan-hui-gui/</loc>
+    <lastmod>2014-09-03T17:16:23+08:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
   
   <url>
     <loc>http://wangyinanchina.github.io/404.html</loc>
-    <lastmod>2014-09-03T16:43:39+08:00</lastmod>
+    <lastmod>2014-09-03T22:07:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://wangyinanchina.github.io/</loc>
-    <lastmod>2014-09-03T16:43:39+08:00</lastmod>
+    <lastmod>2014-09-03T22:07:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>http://wangyinanchina.github.io/about/</loc>
-    <lastmod>2014-09-03T16:43:39+08:00</lastmod>
+    <lastmod>2014-09-03T22:07:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://wangyinanchina.github.io/projects/</loc>
-    <lastmod>2014-09-03T16:43:39+08:00</lastmod>
+    <lastmod>2014-09-03T22:07:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://wangyinanchina.github.io/privacy/</loc>
-    <lastmod>2014-09-03T16:43:39+08:00</lastmod>
+    <lastmod>2014-09-03T22:07:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://wangyinanchina.github.io/search.html</loc>
-    <lastmod>2014-09-03T16:43:39+08:00</lastmod>
+    <lastmod>2014-09-03T22:07:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

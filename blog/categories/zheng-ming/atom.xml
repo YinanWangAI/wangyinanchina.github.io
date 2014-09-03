@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: 证明 | 玩儿数据]]></title>
+  <link href="http://wangyinanchina.github.io/blog/categories/zheng-ming/atom.xml" rel="self"/>
+  <link href="http://wangyinanchina.github.io/"/>
+  <updated>2014-09-03T22:07:52+08:00</updated>
+  <id>http://wangyinanchina.github.io/</id>
+  <author>
+    <name><![CDATA[王轶楠]]></name>
+    <email><![CDATA[Yinan.wang@pku.edu.cn]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[证明多元回归系数的最小二乘性]]></title>
+    <link href="http://wangyinanchina.github.io/blog/2014/09/03/prove-beta-ols/"/>
+    <updated>2014-09-03T20:42:17+08:00</updated>
+    <id>http://wangyinanchina.github.io/blog/2014/09/03/prove-beta-ols</id>
+    <content type="html"><![CDATA[<p>在多元回归中，我们知道对方程$$Y = X\beta + \epsilon$$中$$$\beta$$$的OLS（通常最小二乘）估计为$$$\widehat{\beta} = (X&#8217;X)^{-1}X&#8217;Y$$$,下面来证明该性质：</p>
+
+<!--more-->
+
+
+<blockquote><p>令$$d(||Y - X\beta||^2) / d\beta = -2\sum_{i=1}^{n}X_i(Y_i - X_i\beta) = 0$$
+则$$\beta X&#8217;X - X&#8217;Y = 0$$
+即$$\beta = (X&#8217;X)^{-1}X&#8217;Y时||Y - X\beta||^2有最小值$$
+原式得证。</p></blockquote>
+
+<p>另一种证明方法是:</p>
+
+<blockquote><p>$$||Y - X\beta||^2 = ||Y - X\widehat{\beta} + X\widehat{\beta} - X\beta||^2 = ||Y - X\widehat{\beta}||^2 + ||X\widehat{\beta} - X\beta||^2 + 2||(Y - X\widehat{\beta})&lsquo;(X\widehat{\beta} - X\beta)||$$ 因为：$$(Y - X\widehat{\beta})&rsquo;(X\widehat{\beta} - X\beta) = Y&#8217;X\widehat{\beta} - YX\beta - \widehat{\beta}&lsquo;X&#8217;X\widehat{\beta} + \widehat{\beta}&#8217;X&#8217;X\beta = Y&#8217;X\widehat{\beta} - YX\beta - Y&#8217;X(X&#8217;X)^{-1}X&#8217;X\widehat{\beta} + Y&#8217;X(X&#8217;X)^{-1}X&#8217;X\beta = 0$$所以当 $$$||X\widehat{\beta} - X\beta||^2$$$最小时$$$||Y - X\beta||^2$$$得到最小值，即$$$\beta = \widehat{\beta}$$$，原式得证。</p></blockquote>
+]]></content>
+  </entry>
+  
+</feed>
