@@ -8,6 +8,7 @@ description: "统计模型：理论与实践 第四章：多元回归 笔记"
 keywords: 统计模型 多元回归 最小二乘 beta 
 ---
 在多元回归中，我们知道对方程$$Y = X\beta + \epsilon$$中$$$\beta$$$的OLS（通常最小二乘）估计为$$$\widehat{\beta} = (X'X)^{-1}X'Y$$$,下面来证明该性质：
+<!--more-->
 
 >令$$d(||Y - X\beta||^2) / d\beta = -2\sum_{i=1}^{n}X_i(Y_i - X_i\beta) = 0$$
 则$$\beta X'X - X'Y = 0$$
