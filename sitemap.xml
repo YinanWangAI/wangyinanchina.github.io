@@ -5,35 +5,42 @@
   
   <url>
     <loc>http://wangyinanchina.github.io/404.html</loc>
-    <lastmod>2014-09-03T14:39:01+08:00</lastmod>
+    <lastmod>2014-09-03T15:16:31+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://wangyinanchina.github.io/</loc>
-    <lastmod>2014-09-03T14:39:01+08:00</lastmod>
+    <lastmod>2014-09-03T15:16:31+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>http://wangyinanchina.github.io/blog/archives/</loc>
-    <lastmod>2014-09-03T14:39:01+08:00</lastmod>
+    <lastmod>2014-09-03T15:16:31+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://wangyinanchina.github.io/about/</loc>
+    <lastmod>2014-09-03T15:16:31+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://wangyinanchina.github.io/privacy/</loc>
-    <lastmod>2014-09-03T14:39:01+08:00</lastmod>
+    <lastmod>2014-09-03T15:16:31+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://wangyinanchina.github.io/search.html</loc>
-    <lastmod>2014-09-03T14:39:01+08:00</lastmod>
+    <lastmod>2014-09-03T15:16:31+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
