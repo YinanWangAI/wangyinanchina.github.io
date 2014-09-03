@@ -1,0 +1,31 @@
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F4a4b9b6bddc7a510f463a73370180219' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  jax: ["input/TeX", "output/HTML-CSS"],
+  tex2jax: {
+    inlineMath: [ ['$', '$'] ],
+    displayMath: [ ['$$', '$$']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  messageStyle: "none",
+  "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+});
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+
+<div class="center_wrapper">
+  <div>
+    <a href="mailto:{{site.email}}">Contact</a>, <a href="/privacy/">Privacy Policy</a>
+  </div>
+  <div>
+    Copyright &copy; {{ site.time | date: "%Y" }} - {{ site.author }} -
+    <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+    <span class="credit">, with theme <a href="https://github.com/rcmdnk/octogray">octogray</a></span>
+  </div>
+</div>

@@ -1,0 +1,3 @@
+[submodule ".themes/octogray"]
+	path = .themes/octogray
+	url = git@github.com:rcmdnk/octogray.git
