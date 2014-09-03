@@ -5,7 +5,7 @@
   <link href="http://wangyinanchina.github.io/atom.xml" rel="self"/>
   <link href="http://wangyinanchina.github.io/"/>
   
-  <updated>2014-09-03T15:22:22+08:00</updated>
+  <updated>2014-09-03T15:46:01+08:00</updated>
   <id>http://wangyinanchina.github.io/</id>
   <author>
     <name><![CDATA[王轶楠]]></name>
@@ -13,5 +13,14 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Hello]]></title>
+    <link href="http://wangyinanchina.github.io/blog/2014/09/03/hello/"/>
+    <updated>2014-09-03T15:33:02+08:00</updated>
+    <id>http://wangyinanchina.github.io/blog/2014/09/03/hello</id>
+    <content type="html"><![CDATA[<h1>Hello, Octopress</h1>
+]]></content>
+  </entry>
   
 </feed>
