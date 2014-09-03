@@ -3,7 +3,7 @@ layout: post
 title: "证明多元回归系数的最小二乘性"
 date: 2014-09-03 20:42:17 +0800
 comments: true
-categories:多元回归 证明
+categories: 多元回归 证明
 description: "统计模型：理论与实践 第四章：多元回归 笔记" 
 keywords: 统计模型 多元回归 最小二乘 beta 
 ---
