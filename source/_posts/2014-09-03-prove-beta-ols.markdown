@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "证明$$$\widehat{\beta}$$$的最小二乘性"
+title: "证明多元回归系数的最小二乘性"
 date: 2014-09-03 20:42:17 +0800
 comments: true
 categories:多元回归 证明
