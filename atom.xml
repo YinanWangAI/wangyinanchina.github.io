@@ -5,7 +5,7 @@
   <link href="http://wangyinanchina.github.io/atom.xml" rel="self"/>
   <link href="http://wangyinanchina.github.io/"/>
   
-  <updated>2014-09-03T22:20:47+08:00</updated>
+  <updated>2014-09-03T22:37:20+08:00</updated>
   <id>http://wangyinanchina.github.io/</id>
   <author>
     <name><![CDATA[王轶楠]]></name>
@@ -13,6 +13,21 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[解决mou中inline公式在octopress中显示混乱的问题]]></title>
+    <link href="http://wangyinanchina.github.io/blog/2014/09/03/octopress-mou/"/>
+    <updated>2014-09-03T22:22:48+08:00</updated>
+    <id>http://wangyinanchina.github.io/blog/2014/09/03/octopress-mou</id>
+    <content type="html"><![CDATA[<p>在mou中行内插入公式使用成对的&#8221;$$$&ldquo;，但是如果使用MathJax的默认配置，将文件上传到octopress中,数学公式并不能很好的显示，解决的方法很简单，将/Users/level5/blog/source/_includes/custom/head.html中的MathJax脚本中</p>
+
+<pre><code>inlineMath: [ ['$', '$'], ["\\(", "\\)"] ]
+改为inlineMath: [ ['$$$', '$$$'], ["\\(", "\\)"] ]
+</code></pre>
+
+<p>这么做的原因是MathJax默认的插入行内公式是&#8221;$&ldquo;，而mou是&rdquo;$$$&ldquo;，所以我们需要把&rdquo;$&ldquo;改为&rdquo;$$$&ldquo;。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[证明多元回归系数的最小二乘性]]></title>
