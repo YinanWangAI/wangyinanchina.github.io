@@ -7,7 +7,7 @@ categories: 假设检验
 description: "解决mou中inline公式在octopress中显示混乱的问题" 
 keywords: 超几何分布 fisher's test 假设检验
 ---
-Fisher精确检验(fisher's exat test)是进行统计分析时经常碰到的一种检验方法，它基于超几何分布，作用于离散变量，用于检测两种分类方法的结果是否独立。
+Fisher精确检验(fisher's exat test)是进行统计分析时经常碰到的一种检验方法，它基于超几何分布，作用于离散变量，用于检测两种分类方法的结果是否独立。<!--more-->
 
 首先，我们介绍超几何分布。超几何分布用来模拟这样的过程：将有限的总体分为两类A和B，从中不放回的抽样n次，结果中A的个数符合超几何分布。所以使用古典概型的方法，假设N个总体中有A和B两类，其中A有K个，从中不放回的抽样n次，我们可以推导出n中为A的数目x，即超几何分布的pmf:$$P(X = x) = \binom{K}{x} \binom{N - K}{n - x} / \binom{N}{n}$$
 
