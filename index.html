@@ -9,11 +9,11 @@
   <meta name="author" content="王轶楠">
   
   
-  <meta name="description" content="Posted in 假设检验 超几何分布和fisher精确检验 Fisher精确检验(fisher&rsquo;s exat test)是进行统计分析时经常碰到的一种检验方法，它基于超几何分布，作用于离散变量，用于检测两种分类方法的结果是否独立。 首先，我们介绍超几何分布。 &hellip;">
+  <meta name="description" content="Posted in 假设检验 超几何分布和fisher精确检验 Fisher精确检验(fisher&rsquo;s exat test)是进行统计分析时经常碰到的一种检验方法，它基于超几何分布，作用于离散变量，用于检测两种分类方法的结果是否独立。 Read on &rarr; Posted in &hellip;">
   
   <meta property="og:title" content="" />
   <meta property="og:type" content="blog" />
-  <meta property="og:description" content="Posted in 假设检验 超几何分布和fisher精确检验 Fisher精确检验(fisher&rsquo;s exat test)是进行统计分析时经常碰到的一种检验方法，它基于超几何分布，作用于离散变量，用于检测两种分类方法的结果是否独立。 首先，我们介绍超几何分布。 &hellip;">
+  <meta property="og:description" content="Posted in 假设检验 超几何分布和fisher精确检验 Fisher精确检验(fisher&rsquo;s exat test)是进行统计分析时经常碰到的一种检验方法，它基于超几何分布，作用于离散变量，用于检测两种分类方法的结果是否独立。 Read on &rarr; Posted in &hellip;">
   
   <meta property="og:url" content="http://wangyinanchina.github.io/" />
   
@@ -192,61 +192,10 @@
 <div class="entry-content index_click_box">
   <div class="group">
     
-    <p>Fisher精确检验(fisher&rsquo;s exat test)是进行统计分析时经常碰到的一种检验方法，它基于超几何分布，作用于离散变量，用于检测两种分类方法的结果是否独立。</p>
-
-<p>首先，我们介绍超几何分布。超几何分布用来模拟这样的过程：将有限的总体分为两类A和B，从中不放回的抽样n次，结果中A的个数符合超几何分布。所以使用古典概型的方法，假设N个总体中有A和B两类，其中A有K个，从中不放回的抽样n次，我们可以推导出n中为A的数目x，即超几何分布的pmf:$$P(X = x) = \binom{K}{x} \binom{N - K}{n - x} / \binom{N}{n}$$</p>
-
-<p>回到fisher精确检验，fisher检验要回答的问题是，对数据进行两种分类，这两种分类是否独立？即在第一种分类条件下分为某一类的数据是否更倾向于在第二种分类中归于某类。举例说明(<a href="http://en.wikipedia.org/wiki/Fisher's_exact_test">例子来源于wiki</a>)：</p>
-
-<blockquote><p>我们有24位测试对象，根据其性别和是否在节食，将其分为四类，分类结果如下：</p>
-
-<table>
-<thead>
-<tr>
-<th>$$$\qquad$$$ </th>
-<th> 男性 </th>
-<th> 女性</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>节食 </td>
-<td> 1  </td>
-<td> 9</td>
-</tr>
-<tr>
-<td>不节食 </td>
-<td> 11  </td>
-<td> 3</td>
-</tr>
-</tbody>
-</table>
-
-
-<p>现在我们的问题是，是否女性更喜欢节食？从数据直观上来看，男性和女性都是12人，但是节食的女性是男性的9倍，似乎女性的确更容易节食，但是我们如何定量的去描述这件事呢？可以看出，我们要解决的是一个假设检验问题，我们将零假设设定为：<strong>是否节食和性别无关。</strong>那么，在零假设下，根据超几何分布我们观察到表格中数据的概率是:
-$$\binom{12}{1}\binom{12}{9} / \binom{24}{10} = 0.001346076$$
-而如果我们做一个单尾的检验，那么我们观测到表格中数据或者比表格中数据更极端（即节食男性为0）的概率为：
-$$\binom{12}{1}\binom{12}{9} / \binom{24}{10} + \binom{12}{0}\binom{12}{10} / \binom{24}{10} = 0.001379728$$
-即fisher精确检验的p-value。我们用R去检验我们计算的结果</p></blockquote>
-
-<pre><code>fisher.test(matrix(c(1, 11, 9, 3), 2, 2), alternative = 'less')
-
-# 结果如下，可以看出与我们计算的结果相同
-Fisher's Exact Test for Count Data
-
-data:  matrix(c(1, 11, 9, 3), 2, 2)
-p-value = 0.00138
-alternative hypothesis: true odds ratio is less than 1
-95 percent confidence interval:
- 0.0000000 0.3260026
-sample estimates:
-odds ratio 
-0.03723312 
-</code></pre>
-
-<p>对于双尾的fisher检验，目前还没有好的计算方法，因为对于两个极端并不好定义，目前最简单的方法就是对两个极端，分别计算观测到观测值或者更极端的观测值得概率（例如上例中节食男性为1或者0的情况(一个极端)以及节食男性为9，10，11，12（另一个极端）的情况），并将所得到的概率相加，即为最终的p-value。</p>
-
+    <p>Fisher精确检验(fisher&rsquo;s exat test)是进行统计分析时经常碰到的一种检验方法，它基于超几何分布，作用于离散变量，用于检测两种分类方法的结果是否独立。
     
+    
+    <a href="/blog/2014/09/03/fishers-exact-test/">Read on &rarr;</a>
     
   </div>
 </div>

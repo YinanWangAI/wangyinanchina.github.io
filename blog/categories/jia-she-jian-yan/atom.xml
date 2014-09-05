@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 假设检验 | 玩儿数据]]></title>
   <link href="http://wangyinanchina.github.io/blog/categories/jia-she-jian-yan/atom.xml" rel="self"/>
   <link href="http://wangyinanchina.github.io/"/>
-  <updated>2014-09-05T21:02:00+08:00</updated>
+  <updated>2014-09-05T21:04:16+08:00</updated>
   <id>http://wangyinanchina.github.io/</id>
   <author>
     <name><![CDATA[王轶楠]]></name>
@@ -18,7 +18,7 @@
     <link href="http://wangyinanchina.github.io/blog/2014/09/03/fishers-exact-test/"/>
     <updated>2014-09-03T23:30:07+08:00</updated>
     <id>http://wangyinanchina.github.io/blog/2014/09/03/fishers-exact-test</id>
-    <content type="html"><![CDATA[<p>Fisher精确检验(fisher&rsquo;s exat test)是进行统计分析时经常碰到的一种检验方法，它基于超几何分布，作用于离散变量，用于检测两种分类方法的结果是否独立。</p>
+    <content type="html"><![CDATA[<p>Fisher精确检验(fisher&rsquo;s exat test)是进行统计分析时经常碰到的一种检验方法，它基于超几何分布，作用于离散变量，用于检测两种分类方法的结果是否独立。<!--more--></p>
 
 <p>首先，我们介绍超几何分布。超几何分布用来模拟这样的过程：将有限的总体分为两类A和B，从中不放回的抽样n次，结果中A的个数符合超几何分布。所以使用古典概型的方法，假设N个总体中有A和B两类，其中A有K个，从中不放回的抽样n次，我们可以推导出n中为A的数目x，即超几何分布的pmf:$$P(X = x) = \binom{K}{x} \binom{N - K}{n - x} / \binom{N}{n}$$</p>
 
