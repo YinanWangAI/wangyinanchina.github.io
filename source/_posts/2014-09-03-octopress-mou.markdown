@@ -3,7 +3,7 @@ layout: post
 title: "解决mou中inline公式在octopress中显示混乱的问题"
 date: 2014-09-03 22:22:48 +0800
 comments: true
-categories:
+categories: markdown octopress mou
 description: "解决mou中inline公式在octopress中显示混乱的问题" 
 keywords: mou markdown octopress
 ---
