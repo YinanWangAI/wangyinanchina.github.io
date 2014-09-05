@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[玩儿数据]]></title>
-  <link href="http://wangyinanchina.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: 假设检验 | 玩儿数据]]></title>
+  <link href="http://wangyinanchina.github.io/blog/categories/jia-she-jian-yan/atom.xml" rel="self"/>
   <link href="http://wangyinanchina.github.io/"/>
-  
   <updated>2014-09-05T21:02:00+08:00</updated>
   <id>http://wangyinanchina.github.io/</id>
   <author>
@@ -72,34 +71,6 @@ odds ratio
 </code></pre>
 
 <p>对于双尾的fisher检验，目前还没有好的计算方法，因为对于两个极端并不好定义，目前最简单的方法就是对两个极端，分别计算观测到观测值或者更极端的观测值得概率（例如上例中节食男性为1或者0的情况(一个极端)以及节食男性为9，10，11，12（另一个极端）的情况），并将所得到的概率相加，即为最终的p-value。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[解决mou中inline公式在octopress中显示混乱的问题]]></title>
-    <link href="http://wangyinanchina.github.io/blog/2014/09/03/octopress-mou/"/>
-    <updated>2014-09-03T22:22:48+08:00</updated>
-    <id>http://wangyinanchina.github.io/blog/2014/09/03/octopress-mou</id>
-    <content type="html"><![CDATA[<p>在mou中行内插入公式使用成对的&#8221;$$$&ldquo;，但是如果使用MathJax的默认配置，将文件上传到octopress中,数学公式并不能很好的显示，]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[证明多元回归系数的最小二乘性]]></title>
-    <link href="http://wangyinanchina.github.io/blog/2014/09/03/prove-beta-ols/"/>
-    <updated>2014-09-03T20:42:17+08:00</updated>
-    <id>http://wangyinanchina.github.io/blog/2014/09/03/prove-beta-ols</id>
-    <content type="html"><![CDATA[<p>在多元回归中，我们知道对方程$$Y = X\beta + \epsilon$$中$$$\beta$$$的OLS（通常最小二乘）估计为$$$\widehat{\beta} = (X&#8217;X)^{-1}X&#8217;Y$$$,下面来证明该性质：</p>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[《统计模型：理论与实践》第四章：多元回归-读书笔记]]></title>
-    <link href="http://wangyinanchina.github.io/blog/2014/09/03/tong-ji-mo-xing-duo-yuan-hui-gui/"/>
-    <updated>2014-09-03T17:16:23+08:00</updated>
-    <id>http://wangyinanchina.github.io/blog/2014/09/03/tong-ji-mo-xing-duo-yuan-hui-gui</id>
-    <content type="html"><![CDATA[<p>多元回归和单变量回归类似，目的是探索自变量和因变量的关系，以及对因变量的取值给予预测。</p>
-
 ]]></content>
   </entry>
   
