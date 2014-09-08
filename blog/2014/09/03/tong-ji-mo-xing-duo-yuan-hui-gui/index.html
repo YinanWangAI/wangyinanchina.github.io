@@ -255,6 +255,16 @@ xmlns:foaf="http://xmlns.com/foaf/0.1/">
 
 <p>所以，综上所述我们最终得到$$$\widehat{\beta}$$$的误差为:$$\widehat{cov}(\widehat{\beta}|X) = \widehat{\sigma}^{2}(X&#8217;X)^{-1}\qquad(13)$$</p>
 
+<p>接下来我们需要考虑的问题是，我们的模型到底拟合的好不好。可以证明，假定方程有截距，那么$$$var(Y) = var(X\widehat{\beta}) + var(e)$$$，证明过程如下：</p>
+
+<blockquote><p>令$$$u = I_{n * 1}$$$, 则$$$Y - \bar{Y}u = X\widehat{\beta} - \bar{Y}u + e$$$, 又因为e正交于X和u，那么，
+$$||Y - \bar{Y}u||^{2} = ||X\widehat{\beta} - \bar{Y}u||^{2} + ||e||^{2}\qquad(14)$$
+又因为$$$||X\widehat{\beta} - \bar{Y}u||^{2} = nvar(Y)$$$, $$$||X\widehat{\beta} - \bar{Y}u||^{2} = ||X\widehat{\beta} - \bar{X}\widehat{\beta}u||^{2} = nvar(X\widehat{\beta})$$$, $$$||e||^{2} = nvar(e)$$$，代入(14)，命题得证。</p></blockquote>
+
+<p>因此我们看出可以把Y的波动分为两部分，一部分和自变量相关，一部分和残差相关。显然和残差相关的波动越小，说明我们拟合的模型和观测值越接近，因此我们定义了:
+$$R^{2} = var(X\widehat{\beta}) / var(Y)\qquad(15)$$
+来度量模型的拟合度。根据$$$R^{2}$$$的定义式，我们也称其为被解释的方差。但是，需要注意的是，$$$R^{2}$$$只能说明模型拟合的程度，仅仅依据$$$R^{2}$$$我们无法得到任何因果相关的结论。</p>
+
   </div>
 </div>
 <!-- </div><footer> * pseudo line for the function raw_content() &#8211;>
