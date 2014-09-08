@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 统计模型 | 玩儿数据]]></title>
   <link href="http://wangyinanchina.github.io/blog/categories/tong-ji-mo-xing/atom.xml" rel="self"/>
   <link href="http://wangyinanchina.github.io/"/>
-  <updated>2014-09-05T21:04:16+08:00</updated>
+  <updated>2014-09-08T11:31:48+08:00</updated>
   <id>http://wangyinanchina.github.io/</id>
   <author>
     <name><![CDATA[王轶楠]]></name>
@@ -28,8 +28,29 @@
 以及$$\epsilon_i独立同分布, 期望为0，方差为\sigma^{2} \qquad(3)$$</p>
 
 <p>以上两个假设对$$$\epsilon$$$的取值做了限制，使得我们有可能去估计$$$\beta$$$。通常我们选择OLS估计量$$$\widehat{\beta} = (X&#8217;X)^{-1}X&#8217;Y$$$来估计$$$\beta$$$，并且定义残差为:$$e = Y - X\widehat{\beta} \qquad(4)$$
-可以证明，当$$$\beta = \widehat{\beta}时，sum(e^{2})最小$$$,并且$$$e和X正交，即e\perp X$$$.
+可以证明，当<a href="http://wangyinanchina.github.io/blog/2014/09/03/prove-beta-ols/">$$$\beta = \widehat{\beta}时，sum(e^{2})最小$$$</a>,并且$$$e和X正交，即e\perp X$$$.
 在这里，需要注意e和$$$\epsilon$$$的区别: $$$\epsilon$$$是随机误差，无法观测，也无法估计，我们只能假定它的分布、期望和方差。而e是可以观测的，当我们得到$$$\widehat{\beta}$$$之后，我们也就得到了e，并且通常会用e的平方和的大小去评价一个回归模型的好坏。除此之外，$$$\epsilon$$$与$$$X$$$ 独立而不一定正交，而$$$e与X$$$ 正交，但并不独立。</p>
+
+<p>$$$\widehat{\beta}$$$的另一个重要性质是它是条件无偏的，即$$$E(\widehat{\beta}|X) = \beta$$$。证明过程如下：</p>
+
+<blockquote><p>$$E(\widehat{\beta}|X) = E((X&#8217;X)^{-1}X&#8217;Y|X) = (X&#8217;X)^{-1}X&#8217;E(X\beta + \epsilon|X) = (X&#8217;X)^{-1}X&#8217;X\beta = \beta$$</p></blockquote>
+
+<p>得到$$$\widehat{\beta}$$$后，我们自然要关注其误差是多少，这样我们可以对估计值的波动范围有一个了解。我们可以计算出，$$$cov(\widehat{\beta}|X) = \sigma^{2}(X&#8217;X)^{-1}$$$，计算过程如下:</p>
+
+<blockquote><p>已知$$\widehat{\beta} = (X&#8217;X)^{-1}X&#8217;Y = (X&#8217;X)^{-1}X&#8217;(X\beta + \epsilon) = \beta + (X&#8217;X)^{-1}X&#8217;\epsilon\qquad(5)$$
+所以，$$cov(\widehat{\beta}|X) = (X&#8217;X)^{-1}X&#8217;cov(\epsilon|X)X(X&#8217;X)^{-1} = \sigma^{2}(X&#8217;X)^{-1}\qquad(6)$$
+原式得证。</p></blockquote>
+
+<p>但是$$$\sigma^{2}$$$是无法观测的，所以我们必须得到$$$\widehat{\sigma^{2}}$$$，通常我们使用e&#8217;e来估计$$$\widehat{\sigma^{2}}$$$，由于e一般要比$$$\epsilon$$$要小（因为估计$$$\beta$$$的时候我们选择使e&#8217;e最小的$$$\beta$$$），所以我们将e&#8217;e除以自由度n - p来更好的估计$$$\widehat{\sigma^{2}}$$$，即：$$$\widehat{\sigma^{2}} = 1/(n - p) * e&#8217;e$$$。可以证明，$$$E(\widehat{\sigma}^2|X) = \sigma^{2}$$$，证明过程如下：</p>
+
+<blockquote><p>已知$$E(\widehat{\sigma}^2|X) = 1/(n - p) * E(e&#8217;e|X)\qquad(7)$$，定义$$$H = X(X&#8217;X)^{-1}X&#8217;$$$，易见H是对称幂等矩阵，则$$e = Y - X\widehat{\beta} = (I - H)Y = (I - H)(X\beta + \epsilon) = (I -H)\epsilon\qquad(8)$$
+所以$$e&#8217;e = \epsilon&#8217;(I - H)&lsquo;(I - H)\epsilon = \epsilon&rsquo;(I - H)\epsilon = \sum_{i = 1}^{n}\sum_{j = 1}^{n}\epsilon_{i}(I - H)_{ij}\epsilon_{j}\qquad(9)$$
+所以$$E(\widehat{\sigma}^2|X) = E(\sum_{i = 1}^{n}\sum_{j = 1}^{n}\epsilon_{i}(I - H)_{ij}\epsilon_{j}|X) = \sum_{i = 1}^{n}\sum_{j = 1}^{n}(I - H)_{ij}E(\epsilon_{i}\epsilon_{j}|X)\qquad(10)$$
+又因为$$$\epsilon$$$和X相互独立，且$$$\epsilon$$$独立同分布，所以$$E(\epsilon_{i}\epsilon_{i}|X) = \sigma^{2}, E(\epsilon_{i}\epsilon_{j}|X) = 0\qquad(11)$$
+所以，$$\sum_{i = 1}^{n}\sum_{j = 1}^{n}(I - H)_{ij}E(\epsilon_{i}\epsilon_{j}|X) = \sigma^{2} trace(I -H) = \sigma^{2} (n - trace(X(X&#8217;X)^{-1}X&#8217;)) = (n - p)\sigma^{2}\qquad(12)$$
+将（12）带入（7），即可得到$$$E(\widehat{\sigma}^2|X) = \sigma^{2}$$$</p></blockquote>
+
+<p>所以，综上所述我们最终得到$$$\widehat{\beta}$$$的误差为:$$\widehat{cov}(\widehat{\beta}|X) = \widehat{\sigma}^{2}(X&#8217;X)^{-1}\qquad(13)$$</p>
 ]]></content>
   </entry>
   
