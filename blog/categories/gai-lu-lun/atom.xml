@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 概率论 | 玩儿数据]]></title>
   <link href="http://wangyinanchina.github.io/blog/categories/gai-lu-lun/atom.xml" rel="self"/>
   <link href="http://wangyinanchina.github.io/"/>
-  <updated>2014-09-11T13:29:02+08:00</updated>
+  <updated>2014-09-11T13:34:56+08:00</updated>
   <id>http://wangyinanchina.github.io/</id>
   <author>
     <name><![CDATA[王轶楠]]></name>
@@ -128,19 +128,17 @@ $$p(x) =  1/(b-a), a\leq x \leq b; 0, otherwise$$</p></blockquote>
 如果X和Y独立，那么$$E(X*Y) = E(X)E(Y)$$
 对于X和Y的条件期望，有公式:$$E(X|y) = \sum_{x}x*P(x|y)$$</p>
 
-<p>方差的定义如下：</p>
-
-<blockquote><p>$$$Var(X) = E[(X - E(x))<sup>2</sup>] = E(X<sup>2</sup>) - (E(X))<sup>2</sup>$$$</p></blockquote>
+<p>方差的定义如下：
+$$Var(X) = E[(X - E(x))^{2}] = E(X^{2}) - (E(X))^{2}$$</p>
 
 <p>如果两个变量独立，则$$$Var(X+Y) = Var(X) + Var(Y)$$$，否则需要考虑协方差。</p>
 
-<p>函数的方差：$$$Var(aX + b) = a<sup>2</sup> Var(X)$$$。</p>
+<p>函数的方差：$$$Var(aX + b) = a^{2}Var(X)$$$。</p>
 
 <p>标准差定义为方差的平方根。</p>
 
-<p>最后是切比雪夫不等式（我已经忘记怎么证明了&hellip;不过当年上课时肯定是会证的！！！）:</p>
-
-<blockquote><p>$$P(|X-E(X)| \geq t) \leq Var(X) / t<sup>2</sup>$$</p></blockquote>
+<p>最后是切比雪夫不等式（我已经忘记怎么证明了&hellip;不过当年上课时肯定是会证的！！！）:
+$$P(|X-E(X)| \geq t) \leq Var(X) / t^{2}$$</p>
 
 <p>它的一个重要用途是告诉我们观测值偏离期望的大致概率。</p>
 ]]></content>
