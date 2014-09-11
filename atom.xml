@@ -5,7 +5,7 @@
   <link href="http://wangyinanchina.github.io/atom.xml" rel="self"/>
   <link href="http://wangyinanchina.github.io/"/>
   
-  <updated>2014-09-11T13:34:56+08:00</updated>
+  <updated>2014-09-11T19:21:36+08:00</updated>
   <id>http://wangyinanchina.github.io/</id>
   <author>
     <name><![CDATA[王轶楠]]></name>
@@ -13,6 +13,18 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[概率图模型：第二章(图论部分)-读书笔记]]></title>
+    <link href="http://wangyinanchina.github.io/blog/2014/09/11/pgm-chap2-graph/"/>
+    <updated>2014-09-11T16:38:33+08:00</updated>
+    <id>http://wangyinanchina.github.io/blog/2014/09/11/pgm-chap2-graph</id>
+    <content type="html"><![CDATA[<p>这一节主要是图的各种概念的定义。</p>
+
+<p>图是由节点和边构成的数据结构，边连接两个节点。根据边是否有边，我们可以把图分为有向图（图中所有的边都有向）和无向图（图中所有的边都无向）。</p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[概率图模型：第二章(概率论部分)-读书笔记]]></title>

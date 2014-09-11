@@ -5,17 +5,17 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang=""><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>超几何分布和fisher精确检验 - 玩儿数据</title>
+  <title>Category: 图论 - 玩儿数据</title>
   <meta name="author" content="王轶楠">
   
   
-  <meta name="description" content="解决mou中inline公式在octopress中显示混乱的问题">
-  <meta name="keywords" content="超几何分布 fisher's test 假设检验">
-  <meta property="og:title" content="超几何分布和fisher精确检验" />
-  <meta property="og:type" content="blog" />
-  <meta property="og:description" content="解决mou中inline公式在octopress中显示混乱的问题">
+  <meta name="description" content="Category: 图论">
   
-  <meta property="og:url" content="http://wangyinanchina.github.io/blog/2014/09/03/fishers-exact-test/" />
+  <meta property="og:title" content="Category: 图论" />
+  <meta property="og:type" content="blog" />
+  <meta property="og:description" content="Category: 图论">
+  
+  <meta property="og:url" content="http://wangyinanchina.github.io/blog/categories/tu-lun/" />
   
   
   
@@ -31,7 +31,7 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <link rel="canonical" href="http://wangyinanchina.github.io/blog/2014/09/03/fishers-exact-test/">
+  <link rel="canonical" href="http://wangyinanchina.github.io//blog/categories/tu-lun/">
   <link href="/favicon.png" rel="icon">
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -122,16 +122,16 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div><!-- post -->
-<article class="hentry" role="article" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-  
+      <div><!-- page -->
+  <article role="article">
+    
 
 <!--
 <rdf:RDF
 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 xmlns:dc="http://purl.org/dc/elements/1.1/"
 xmlns:foaf="http://xmlns.com/foaf/0.1/">
-<rdf:Description rdf:about="http://wangyinanchina.github.io/blog/2014/09/03/fishers-exact-test/">
+<rdf:Description rdf:about="http://wangyinanchina.github.io/blog/categories/tu-lun/index.html">
 <foaf:maker rdf:parseType="Resource">
 <foaf:holdsAccount>
 <foaf:OnlineAccount foaf:accountName="">
@@ -153,187 +153,12 @@ xmlns:foaf="http://xmlns.com/foaf/0.1/">
 </article>
 
 
-  <!-- google_ad_section_start -->
-  
-<header>
-  
-  <p class="meta">
+    <!-- google_ad_section_start -->
     
-
-
-
-
-
-
-
-
-  
-
-
-
-<time datetime="2014-09-03T23:30:07+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated"></time>
-    
-
-<span class="categories">
-  Posted in
-  
-    <a class='category' href='/blog/categories/jia-she-jian-yan/'>假设检验</a>
-  
-</span>
-
-
-    
-
-
-  </p>
-  
-  
-  
-  <h1 class="entry-title" itemprop="name headline">超几何分布和fisher精确检验</h1>
-  
-  
-  
-</header>
-
-
-<div class="sharing">
-  <ul>
-    
-    
-    
-    
-    
-    
-    
-    
-  </ul>
-</div>
-
-
-
-
-<div class="entry-content">
-  <div class="group">
-    
-    <p>Fisher精确检验(fisher&rsquo;s exat test)是进行统计分析时经常碰到的一种检验方法，它基于超几何分布，作用于离散变量，用于检测两种分类方法的结果是否独立。
-  </div>
-  <!-- more -->
-  <div class="group">
-    <p>Fisher精确检验(fisher&rsquo;s exat test)是进行统计分析时经常碰到的一种检验方法，它基于超几何分布，作用于离散变量，用于检测两种分类方法的结果是否独立。<!--more--></p>
-
-<p>首先，我们介绍超几何分布。超几何分布用来模拟这样的过程：将有限的总体分为两类A和B，从中不放回的抽样n次，结果中A的个数符合超几何分布。所以使用古典概型的方法，假设N个总体中有A和B两类，其中A有K个，从中不放回的抽样n次，我们可以推导出n中为A的数目x，即超几何分布的pmf:$$P(X = x) = \binom{K}{x} \binom{N - K}{n - x} / \binom{N}{n}$$</p>
-
-<p>回到fisher精确检验，fisher检验要回答的问题是，对数据进行两种分类，这两种分类是否独立？即在第一种分类条件下分为某一类的数据是否更倾向于在第二种分类中归于某类。举例说明(<a href="http://en.wikipedia.org/wiki/Fisher's_exact_test">例子来源于wiki</a>)：</p>
-
-<blockquote><p>我们有24位测试对象，根据其性别和是否在节食，将其分为四类，分类结果如下：</p>
-
-<table>
-<thead>
-<tr>
-<th>$$$\qquad$$$ </th>
-<th> 男性 </th>
-<th> 女性</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>节食 </td>
-<td> 1  </td>
-<td> 9</td>
-</tr>
-<tr>
-<td>不节食 </td>
-<td> 11  </td>
-<td> 3</td>
-</tr>
-</tbody>
-</table>
-
-
-<p>现在我们的问题是，是否女性更喜欢节食？从数据直观上来看，男性和女性都是12人，但是节食的女性是男性的9倍，似乎女性的确更容易节食，但是我们如何定量的去描述这件事呢？可以看出，我们要解决的是一个假设检验问题，我们将零假设设定为：<strong>是否节食和性别无关。</strong>那么，在零假设下，根据超几何分布我们观察到表格中数据的概率是:
-$$\binom{12}{1}\binom{12}{9} / \binom{24}{10} = 0.001346076$$
-而如果我们做一个单尾的检验，那么我们观测到表格中数据或者比表格中数据更极端（即节食男性为0）的概率为：
-$$\binom{12}{1}\binom{12}{9} / \binom{24}{10} + \binom{12}{0}\binom{12}{10} / \binom{24}{10} = 0.001379728$$
-即fisher精确检验的p-value。我们用R去检验我们计算的结果</p></blockquote>
-
-<pre><code>fisher.test(matrix(c(1, 11, 9, 3), 2, 2), alternative = 'less')
-
-# 结果如下，可以看出与我们计算的结果相同
-Fisher's Exact Test for Count Data
-
-data:  matrix(c(1, 11, 9, 3), 2, 2)
-p-value = 0.00138
-alternative hypothesis: true odds ratio is less than 1
-95 percent confidence interval:
- 0.0000000 0.3260026
-sample estimates:
-odds ratio 
-0.03723312 
-</code></pre>
-
-<p>对于双尾的fisher检验，目前还没有好的计算方法，因为对于两个极端并不好定义，目前最简单的方法就是对两个极端，分别计算观测到观测值或者更极端的观测值得概率（例如上例中节食男性为1或者0的情况(一个极端)以及节食男性为9，10，11，12（另一个极端）的情况），并将所得到的概率相加，即为最终的p-value。</p>
-
-  </div>
-</div>
-<!-- </div><footer> * pseudo line for the function raw_content() &#8211;>
-
-
-
-  <!-- google_ad_section_end -->
-  <footer>
-    
-    <p class="meta">
+    <header>
       
-  
-
-<span class="byline author vcard" itemscope itemtype="http://schema.org/Person">Posted by <span class="fn" itemprop="name">王轶楠</span></span>
-
-      
-
-
-
-
-
-
-
-
-  
-
-
-
-<time datetime="2014-09-03T23:30:07+08:00" class="updated"  data-updated="true" itemprop="dateModified"></time>
-      
-
-<span class="categories">
-  Posted in
-  
-    <a class='category' href='/blog/categories/jia-she-jian-yan/'>假设检验</a>
-  
-</span>
-
-
-      
-
-
-    </p>
-    
-    <div class="related_posts">
-<h3>You may also like&#8230;</h3>
-<ul>
-
-<li><a href="/blog/2014/09/11/pgm-chap2-graph/">概率图模型：第二章(图论部分)-读书笔记</a></li>
-
-<li><a href="/blog/2014/09/10/pgm-chap-2/">概率图模型：第二章(概率论部分)-读书笔记</a></li>
-
-<li><a href="/blog/2014/09/03/octopress-mou/">解决mou中inline公式在octopress中显示混乱的问题</a></li>
-
-<li><a href="/blog/2014/09/03/prove-beta-ols/">证明多元回归系数的最小二乘性</a></li>
-
-<li><a href="/blog/2014/09/03/tong-ji-mo-xing-duo-yuan-hui-gui/">《统计模型：理论与实践》第四章：多元回归-读书笔记</a></li>
-
-</ul>
-</div>
-
+      <h1 class="entry-title">Category: 图论</h1>
+    </header>
     
     
     
@@ -351,41 +176,58 @@ odds ratio
 </div>
 
     
-    <p class="meta">
-      
-      <a class="basic-alignment left" href="/blog/2014/09/03/octopress-mou/" title="Previous Post: 解决mou中inline公式在octopress中显示混乱的问题">&laquo; 解决mou中inline公式在octopress中显示混乱的问题</a>
-      
-      
-      <a class="basic-alignment right" href="/blog/2014/09/10/pgm-chap-2/" title="Next Post: 概率图模型：第二章(概率论部分)-读书笔记">概率图模型：第二章(概率论部分)-读书笔记 &raquo;</a>
-      
-    </p>
-  </footer>
+    
+    <div class="entry-content">
+    <div id="blog-archives" class="category" itemscope itemtype="http://schema.org/Blog">
+
+
+
+
+  
+  <h2>2014</h2>
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+<time datetime="2014-09-11T16:38:33+08:00" class="updated"  data-updated="true" itemprop="dateModified"></time>
+
+
+<span class="categories">
+  Posted in
+  
+    <a class='category' href='/blog/categories/tu-lun/'>图论</a>, <a class='category' href='/blog/categories/gai-lu-tu-mo-xing/'>概率图模型</a>
+  
+</span>
+
+,
+
+
+
+<h1 itemprop="name headline"><a href="/blog/2014/09/11/pgm-chap2-graph/">概率图模型：第二章(图论部分)-读书笔记</a></h1>
+
 </article>
 
-
-<section>
-
-
-</section>
-
-
-
-
-<div class="center_wrapper">
-  
-
 </div>
 
-
-
-
-<section>
-
-
-</section>
-
-
-</div><!-- post -->
+    </div>
+    
+    <!-- google_ad_section_end -->
+    
+  </article>
+  
+  
+</div><!-- page -->
 
 <aside class="sidebar">
   

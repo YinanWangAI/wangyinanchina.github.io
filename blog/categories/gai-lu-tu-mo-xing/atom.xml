@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 概率图模型 | 玩儿数据]]></title>
   <link href="http://wangyinanchina.github.io/blog/categories/gai-lu-tu-mo-xing/atom.xml" rel="self"/>
   <link href="http://wangyinanchina.github.io/"/>
-  <updated>2014-09-11T13:34:56+08:00</updated>
+  <updated>2014-09-11T19:21:36+08:00</updated>
   <id>http://wangyinanchina.github.io/</id>
   <author>
     <name><![CDATA[王轶楠]]></name>
@@ -12,6 +12,69 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[概率图模型：第二章(图论部分)-读书笔记]]></title>
+    <link href="http://wangyinanchina.github.io/blog/2014/09/11/pgm-chap2-graph/"/>
+    <updated>2014-09-11T16:38:33+08:00</updated>
+    <id>http://wangyinanchina.github.io/blog/2014/09/11/pgm-chap2-graph</id>
+    <content type="html"><![CDATA[<p>这一节主要是图的各种概念的定义。</p>
+
+<p>图是由节点和边构成的数据结构，边连接两个节点。根据边是否有边，我们可以把图分为有向图（图中所有的边都有向）和无向图（图中所有的边都无向）。</p>
+
+<!--more-->
+
+
+<p>本书中我们假设图中结点的集合为$$$\mathcal{X} = \{X_{1},&hellip;,X_{n}\}$$$，边的集合为$$$\mathcal{E}$$$,有向图用$$$\mathcal{G}$$$表示，无向图用$$$\mathcal{H}$$$表示。</p>
+
+<p>对于有向边$$$X_{i}\to X_{j}$$$，我们称$$$X_{i}是X_{j}$$$的父节点，$$$X_{j}是X_{i}的子节点$$$。对于无向边$$$X_{i}- X_{j}$$$，我们称$$$X_{i}和X_{j}$$$是邻居。无论两个结点以哪种方式相连，我们均称他们相连接。</p>
+
+<p>对于一个结点X，我们用$$$Pa_{X}来表示其父节点，Ch_{X}来表示其子节点，Nb_{X}来表示其邻居，用Boundary_{X}来表示Pa_{X}\cup Nb_{X}$$$</p>
+
+<p>结点的度是指与其相连的边的数目。indegree是指指向该结点的边的数目。</p>
+
+<p><strong>induced subgraph</strong>定义如下：</p>
+
+<blockquote><p>对于图$$$\mathcal{K}=(\mathcal{X},\mathcal{E})，令X\subset \mathcal{X}，则induced\quad subgraph是指包含X以及X中结点在\mathcal{K}中所有边的图$$$</p></blockquote>
+
+<p><strong>完全子图(complete subgraph)</strong>是指图中结点两两之间均被边相连。</p>
+
+<p><strong>Upward closure</strong>是指：</p>
+
+<blockquote><p>$$$X\in \mathcal{X}，当对任意x\in X, Boundary_{x} \subset X，那么包含X的最小Y是X的$$$upward closure。记为$$$\mathcal{K}^{+}[X]$$$</p></blockquote>
+
+<p><strong>根据我的理解，$$$\mathcal{K}^{+}[X] = \mathcal{K}[Y]$$$。</strong></p>
+
+<p>接下来是两个和边相关的定义。</p>
+
+<blockquote><p><strong>path</strong>:$$$X_{1},&hellip;,X_{k}在图\mathcal{K}=(\mathcal{X}, \mathcal{E})形成一个path，如果对每一个i = 1,2,&hellip;,k-1有X_{i} \to X_{i+1}或X_{i} -X_{i+1}。我们说一条path是有向的，当且仅当至少path中一条边是有向的$$$
+<strong>trail</strong>:trail定义比path宽松一点，trail允许$$$X_{i} \leftarrow X_{i+1}$$$。</p></blockquote>
+
+<p>接下来定义<strong>连通图(connected graph)</strong>：</p>
+
+<blockquote><p>对任意$$$X_{i},X_{j}之间，均有trail$$$。</p></blockquote>
+
+<p>接下来定义<strong>祖先(ancestor)</strong>和<strong>后代(descendant)</strong>：</p>
+
+<blockquote><p>我们说X和Y是祖先和后代的关系，当且仅当在$$$X_{1},&hellip;,X_{k}$$$中有一条path，其中$$$X=X_{1}，Y=X_{k}$$$。对于X的祖先和后代，我们分别用$$$Ancestor_{X}和Descendant_{X}$$$表示。</p></blockquote>
+
+<p>我们称一系列结点$$$X_{1},&hellip;,X_{n}$$$<strong>拓扑有序(topological ordering)</strong>当：如果存在$$$X_{i}\to X_{j} \in \mathcal{E}，那么i&lt;j$$$。</p>
+
+<p>最后我们讨论<strong>Cycle</strong>和<strong>Loop</strong>。如果有一条path指向自身，那就形成了一个cycle。不包含cycle的图称之为无环图。本书中最重要的图就是DAG（有向无环图），之所以重要的一个原因是有环图太复杂。（那么基因调控网络中的feed loop就不好用PGM解决了）</p>
+
+<p>如果一个图中即包含有向边，又包含无向边，我们称之为<strong>部分有向无环图</strong>。部分有向无环图可以分解为<strong>链式组成(chain component)</strong>，即对于每个链式组成，其中的结点以无向边相连，而其和组成之外的结点以有向边相连。</p>
+
+<p>loop的定义松散一些，如果有一个结点可以通过一条trail回到其自身，那就构成了loop。如果图中不含有loop，我们则称图singly connected。</p>
+
+<p>接下来定义森林和树的概念：</p>
+
+<blockquote><p>对有向图，如果每个结点有至多一个父节点，那么称之为森林，如果这个图也是联通的，那么称之为树。对无向图，如果图中不含loop，即singly connected，我们称之为森林，如果是联通的，则称之为树。</p></blockquote>
+
+<p>本节的最后一个定义是<strong>chordal graph</strong>：</p>
+
+<blockquote><p>对于图中的一个环，如果这个环包含大于等于四个结点并且有边连接环中两个不相邻的结点，那么我们称这个图为chordal graph。</p></blockquote>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[概率图模型：第二章(概率论部分)-读书笔记]]></title>
