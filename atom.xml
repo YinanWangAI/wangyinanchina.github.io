@@ -5,7 +5,7 @@
   <link href="http://wangyinanchina.github.io/atom.xml" rel="self"/>
   <link href="http://wangyinanchina.github.io/"/>
   
-  <updated>2014-09-08T15:07:02+08:00</updated>
+  <updated>2014-09-11T13:29:02+08:00</updated>
   <id>http://wangyinanchina.github.io/</id>
   <author>
     <name><![CDATA[王轶楠]]></name>
@@ -13,6 +13,16 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[概率图模型：第二章(概率论部分)-读书笔记]]></title>
+    <link href="http://wangyinanchina.github.io/blog/2014/09/10/pgm-chap-2/"/>
+    <updated>2014-09-10T18:33:13+08:00</updated>
+    <id>http://wangyinanchina.github.io/blog/2014/09/10/pgm-chap-2</id>
+    <content type="html"><![CDATA[<p>这学期开始阅读概率图模型的大部头：《Probabilistic Graphical Models Principles and Techniques》。本学期的阅读计划是贝叶斯网络相关的：2，3，4，5，17，18，19，21章，希望可以坚持下来~~</p>
+
+<p>接下来进入正文，第二章主要是复习之前的概率论和图论的知识。]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[超几何分布和fisher精确检验]]></title>

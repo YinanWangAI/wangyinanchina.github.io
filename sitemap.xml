@@ -3,6 +3,12 @@
   
   
   <url>
+    <loc>http://wangyinanchina.github.io/blog/2014/09/10/pgm-chap-2/</loc>
+    <lastmod>2014-09-10T18:33:13+08:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://wangyinanchina.github.io/blog/2014/09/03/fishers-exact-test/</loc>
     <lastmod>2014-09-03T23:30:07+08:00</lastmod>
     <priority>0.8</priority>
@@ -29,42 +35,42 @@
   
   <url>
     <loc>http://wangyinanchina.github.io/404.html</loc>
-    <lastmod>2014-09-08T15:07:02+08:00</lastmod>
+    <lastmod>2014-09-11T13:29:02+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://wangyinanchina.github.io/</loc>
-    <lastmod>2014-09-08T15:07:02+08:00</lastmod>
+    <lastmod>2014-09-11T13:29:02+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>http://wangyinanchina.github.io/about/</loc>
-    <lastmod>2014-09-08T15:07:02+08:00</lastmod>
+    <lastmod>2014-09-11T13:29:02+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://wangyinanchina.github.io/projects/</loc>
-    <lastmod>2014-09-08T15:07:02+08:00</lastmod>
+    <lastmod>2014-09-11T13:29:02+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://wangyinanchina.github.io/privacy/</loc>
-    <lastmod>2014-09-08T15:07:02+08:00</lastmod>
+    <lastmod>2014-09-11T13:29:02+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://wangyinanchina.github.io/search.html</loc>
-    <lastmod>2014-09-08T15:07:02+08:00</lastmod>
+    <lastmod>2014-09-11T13:29:02+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
