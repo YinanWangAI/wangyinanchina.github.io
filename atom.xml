@@ -5,7 +5,7 @@
   <link href="http://wangyinanchina.github.io/atom.xml" rel="self"/>
   <link href="http://wangyinanchina.github.io/"/>
   
-  <updated>2014-09-11T19:21:36+08:00</updated>
+  <updated>2014-09-15T17:42:51+08:00</updated>
   <id>http://wangyinanchina.github.io/</id>
   <author>
     <name><![CDATA[王轶楠]]></name>
@@ -34,6 +34,15 @@
     <content type="html"><![CDATA[<p>这学期开始阅读概率图模型的大部头：《Probabilistic Graphical Models Principles and Techniques》。本学期的阅读计划是贝叶斯网络相关的：2，3，4，5，17，18，19，21章，希望可以坚持下来~~</p>
 
 <p>接下来进入正文，第二章主要是复习之前的概率论和图论的知识。]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[统计模型：理论与实践 第五章：多元回归-特别主题 读书笔记]]></title>
+    <link href="http://wangyinanchina.github.io/blog/2014/09/08/statistical-model-chap-5/"/>
+    <updated>2014-09-08T21:28:48+08:00</updated>
+    <id>http://wangyinanchina.github.io/blog/2014/09/08/statistical-model-chap-5</id>
+    <content type="html"><![CDATA[<p>在多元回归模型：$$Y = X\beta + \epsilon\qquad(1)$$
+中，]]></content>
   </entry>
   
   <entry>
