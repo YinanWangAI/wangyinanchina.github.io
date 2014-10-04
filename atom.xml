@@ -5,7 +5,7 @@
   <link href="http://wangyinanchina.github.io/atom.xml" rel="self"/>
   <link href="http://wangyinanchina.github.io/"/>
   
-  <updated>2014-09-15T17:42:51+08:00</updated>
+  <updated>2014-10-04T16:14:38+08:00</updated>
   <id>http://wangyinanchina.github.io/</id>
   <author>
     <name><![CDATA[王轶楠]]></name>
@@ -13,6 +13,31 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[凸优化课程笔记：凸集]]></title>
+    <link href="http://wangyinanchina.github.io/blog/2014/10/04/cvx-chap2/"/>
+    <updated>2014-10-04T16:02:27+08:00</updated>
+    <id>http://wangyinanchina.github.io/blog/2014/10/04/cvx-chap2</id>
+    <content type="html"><![CDATA[<p>这学期选修了凸优化，之前读paper或者自己处理问题的时候，遇到优化问题都是一知半解，然后直接拿起别人写好的软件包就用的。希望经过这学期的打怪升级可以提高自己面对优化问题时的装备属性~]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[矩阵的SVD分解]]></title>
+    <link href="http://wangyinanchina.github.io/blog/2014/09/16/svd/"/>
+    <updated>2014-09-16T13:27:18+08:00</updated>
+    <id>http://wangyinanchina.github.io/blog/2014/09/16/svd</id>
+    <content type="html"><![CDATA[<p>奇异值分解（SVD）在机器学习和统计中有着很广泛的应用。但是线代课上并没有着重讲解这一部分，所以今天试着自己再总结一下SVD分解。]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[统计模型：理论与实践 第五章：多元回归-特别主题 读书笔记]]></title>
+    <link href="http://wangyinanchina.github.io/blog/2014/09/15/statistical-model-chap-5/"/>
+    <updated>2014-09-15T21:28:48+08:00</updated>
+    <id>http://wangyinanchina.github.io/blog/2014/09/15/statistical-model-chap-5</id>
+    <content type="html"><![CDATA[<p>在多元回归模型：$$Y = X\beta + \epsilon\qquad(1)$$
+中，]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[概率图模型：第二章(图论部分)-读书笔记]]></title>
@@ -34,15 +59,6 @@
     <content type="html"><![CDATA[<p>这学期开始阅读概率图模型的大部头：《Probabilistic Graphical Models Principles and Techniques》。本学期的阅读计划是贝叶斯网络相关的：2，3，4，5，17，18，19，21章，希望可以坚持下来~~</p>
 
 <p>接下来进入正文，第二章主要是复习之前的概率论和图论的知识。]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[统计模型：理论与实践 第五章：多元回归-特别主题 读书笔记]]></title>
-    <link href="http://wangyinanchina.github.io/blog/2014/09/08/statistical-model-chap-5/"/>
-    <updated>2014-09-08T21:28:48+08:00</updated>
-    <id>http://wangyinanchina.github.io/blog/2014/09/08/statistical-model-chap-5</id>
-    <content type="html"><![CDATA[<p>在多元回归模型：$$Y = X\beta + \epsilon\qquad(1)$$
-中，]]></content>
   </entry>
   
   <entry>

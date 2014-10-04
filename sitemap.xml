@@ -3,6 +3,24 @@
   
   
   <url>
+    <loc>http://wangyinanchina.github.io/blog/2014/10/04/cvx-chap2/</loc>
+    <lastmod>2014-10-04T16:02:27+08:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://wangyinanchina.github.io/blog/2014/09/16/svd/</loc>
+    <lastmod>2014-09-16T13:27:18+08:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://wangyinanchina.github.io/blog/2014/09/15/statistical-model-chap-5/</loc>
+    <lastmod>2014-09-15T21:28:48+08:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://wangyinanchina.github.io/blog/2014/09/11/pgm-chap2-graph/</loc>
     <lastmod>2014-09-11T16:38:33+08:00</lastmod>
     <priority>0.8</priority>
@@ -11,12 +29,6 @@
   <url>
     <loc>http://wangyinanchina.github.io/blog/2014/09/10/pgm-chap-2/</loc>
     <lastmod>2014-09-10T18:33:13+08:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://wangyinanchina.github.io/blog/2014/09/08/statistical-model-chap-5/</loc>
-    <lastmod>2014-09-08T21:28:48+08:00</lastmod>
     <priority>0.8</priority>
   </url>
   
@@ -47,42 +59,42 @@
   
   <url>
     <loc>http://wangyinanchina.github.io/404.html</loc>
-    <lastmod>2014-09-15T17:42:51+08:00</lastmod>
+    <lastmod>2014-10-04T16:14:38+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://wangyinanchina.github.io/</loc>
-    <lastmod>2014-09-15T17:42:51+08:00</lastmod>
+    <lastmod>2014-10-04T16:14:38+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>http://wangyinanchina.github.io/about/</loc>
-    <lastmod>2014-09-15T17:42:51+08:00</lastmod>
+    <lastmod>2014-10-04T16:14:38+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://wangyinanchina.github.io/projects/</loc>
-    <lastmod>2014-09-15T17:42:51+08:00</lastmod>
+    <lastmod>2014-10-04T16:14:38+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://wangyinanchina.github.io/privacy/</loc>
-    <lastmod>2014-09-15T17:42:51+08:00</lastmod>
+    <lastmod>2014-10-04T16:14:38+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://wangyinanchina.github.io/search.html</loc>
-    <lastmod>2014-09-15T17:42:51+08:00</lastmod>
+    <lastmod>2014-10-04T16:14:38+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

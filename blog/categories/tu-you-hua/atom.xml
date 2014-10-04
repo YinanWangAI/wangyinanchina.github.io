@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: 凸优化 | 玩儿数据]]></title>
+  <link href="http://wangyinanchina.github.io/blog/categories/tu-you-hua/atom.xml" rel="self"/>
+  <link href="http://wangyinanchina.github.io/"/>
+  <updated>2014-10-04T16:14:38+08:00</updated>
+  <id>http://wangyinanchina.github.io/</id>
+  <author>
+    <name><![CDATA[王轶楠]]></name>
+    <email><![CDATA[Yinan.wang@pku.edu.cn]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[凸优化课程笔记：凸集]]></title>
+    <link href="http://wangyinanchina.github.io/blog/2014/10/04/cvx-chap2/"/>
+    <updated>2014-10-04T16:02:27+08:00</updated>
+    <id>http://wangyinanchina.github.io/blog/2014/10/04/cvx-chap2</id>
+    <content type="html"><![CDATA[<p>这学期选修了凸优化，之前读paper或者自己处理问题的时候，遇到优化问题都是一知半解，然后直接拿起别人写好的软件包就用的。希望经过这学期的打怪升级可以提高自己面对优化问题时的装备属性~<!--more--></p>
+
+<p>开学前两周先讲理论不管应用【真不愧是基数开的课， 其实就是定义了一堆概念，对应的是<a href="http://www.stanford.edu/~boyd/cvxbook/">Convex optimization, Stephen Boyd and Lieven Vandenberghe</a>这本书的第二章和第三章，学的时候觉得这一段好枯燥好难记，希望以后用的时候能发现其中的奥秘。</p>
+
+<p>首先先是两只小怪，<strong>直线</strong>和<strong>线段</strong>，其实就是用代数的方法表示直线和线段。</p>
+
+<blockquote><p>$$$设x_1 \neq x_2是R^{n}中的两个点，那么穿越这两个点的直线可以表示为y = \theta x_{1} + (1-\theta)x_{2}, \theta \in R，其实就是说对应于\theta的无穷个取值，$$$</p>
+
+<p>$$$y也有无穷个取值，这些值连起来，就构成了一条通过x_{1}和x_{2}的直线。线段的表示方法和直线一样，只是线段限制\theta在[0,1]取值$$$</p></blockquote>
+
+<p>接下来定义一个后面用的比较多的概念：<strong>仿射集合</strong>。这个词看起来挺高端的，其实定义非常简单：</p>
+
+<blockquote><p>$$$设集合C \in R^{n}，如果经过C中任意两点的直线仍然在C内，那么C是一个仿射集合。$$$</p></blockquote>
+
+<p>仿射集合有一个及其贴近生活的例子，就是线性方程组的解集，即$$$\{x|Ax = b\}$$$是仿射集合。证明非常简单，直接用定义进行证明。貌似仿射集合的证明都是类似的直接定义证明，干净直爽~</p>
+
+<p>然后叮叮叮叮大boss出场，我们将要讨论<strong>凸集</strong>的定义，因为课程内容是凸优化，所以名字中带凸的名词我都默认为十！分！重！要！凸集的定义比仿射集合要温和一些，因为其实他就是仿射集合的子集：</p>
+
+<blockquote><p>$$$设集合C \in R^{n}，如果经过C中任意两点的线段仍然在C内，那么C是一个凸集。$$$</p></blockquote>
+
+<p>凸集的例子在二维空间中比较好想象，例如圆啊矩形啊什么的都是凸集，然后下一个带凸的名词来了：<strong>凸组合</strong>：</p>
+
+<blockquote><p>$$$对于任意点x_1,&hellip;,x_k，x = \theta_1 x_1 + &hellip; +\theta_k x_k, \sum_{i}^{k}\theta_i=1，\theta_i \geq0是x_i的凸组合。$$$</p></blockquote>
+
+<p>凸组合有什么用呢？以我目前的理解它是为下一个带凸的名词：<strong>凸包</strong>做准备的，可以暂且理解为凸包的小弟。凸包的定义是：</p>
+
+<blockquote><p>$$$对于集合S，S的凸包是包含所有S中点的凸组合的集合。$$$</p></blockquote>
+
+<p>凸包的重要应用是对于一个不是凸集的集合S，S的凸包是包含S的最小凸集。因此对于任意集合，我们可以通过将其扩张为一个凸包来得到一个包含他的凸集。【听起来很有测度论中扩张$$$\sigma域的感觉。$$$</p>
+
+<p>讨论完仿射集合和凸集之后，我们发现凸集的定义比仿射集合要宽泛的多，那么有没有一个介于其中的集合呢？话都说到这份上了那当然是有的，接下来凸家族的另一个重要成员<strong>凸锥</strong>闪亮登场，定义如下：</p>
+
+<blockquote><p>对于集合S，S的凸锥为包含S中所有点的锥组合的集合。【啥是锥组合？没学过啊&hellip;.</p>
+
+<p><strong>锥组合</strong>其实就是:$$$对于点x_1和x_2，y = \theta_1 x_1 + \theta_2 x_2，\theta_1,\theta_2\geq0是x_1和x_2的锥组合$$$</p></blockquote>
+
+<p>至于为啥叫锥，其实很简单，因为在二维空间中，这个集合就是一个锥形&hellip;.</p>
+
+<p>然后接着定义概念&hellip;.下面出场的是<strong>超平面</strong>和<strong>半空间</strong>，两个在分类问题中经常用到的名词，玩过支持向量机的应该很熟悉了。超平面定义如下：</p>
+
+<blockquote><p>$$$集合\{x|a^{T}x=b\}是超平面。$$$
+而半空间则是：
+$$$集合\{x|a^{T}x \leq b\}是半空间。$$$</p></blockquote>
+
+<p>当我们把这一大坨概念结合到一起的时候，我们会发现超平面居然是仿射的！（那必然也是凸的），半空间居然是凸的！【证明依然是简单粗暴地根据定义霸王硬上弓&hellip;</p>
+
+<p>然后，我们还有一些概念要定义&hellip;&hellip;.之前有了平面，那自然也不能忘了球面，所以我们就来定义一下<strong>球</strong>和<strong>椭球</strong>吧。</p>
+
+<p>球：</p>
+
+<blockquote><p>$$$球需要两个参数：球心x_{c}和半径r。B(x_{c} , r) = \{x|\quad||x-x_{c}||_2 \leq r \}。$$$</p></blockquote>
+
+<p>椭球：</p>
+
+<blockquote><p>$$$\{x | (x - x_{c})^{T} P^{-1} (x - x_{c}) \leq 1 \}, 其中P是对称正定矩阵。$$$</p></blockquote>
+
+<p>至于球和椭球是不是凸集，那不是废话么&hellip;不是凸集干嘛在这里定义这个东东！</p>
+
+<p>然后再来两个听起来更加高大上的凸集：<strong>范数球</strong>和<strong>范数锥</strong>。
+范数球：</p>
+
+<blockquote><p>$$$\{x | \quad ||x - x_{c}|| \leq r \}$$$</p></blockquote>
+
+<p>范数锥：</p>
+
+<blockquote><p>$$$\{(x, t) | \quad ||x|| \leq t \}$$$</p></blockquote>
+
+<p>然后，还有更高端的凸集orz&hellip;.</p>
+
+<p><strong>多边形</strong>:</p>
+
+<blockquote><p>$$$\{x | Ax \preceq b, Cx = d \}$$$</p></blockquote>
+
+<p>以及<strong>半正定锥</strong>:</p>
+
+<blockquote><p>全体n维对称半正定矩阵组成的集合是半正定锥。可以证明这是个凸锥&hellip;.</p></blockquote>
+
+<p>然后我们今天的概念定义就先告一段落，不过还没完呢！！！接下俩我们进入下一个话题，保凸运算【注意不是保胎是保凸</p>
+
+<p>保凸运算是集合运算，想象一下我们辛辛苦苦得到几个凸集，然后想把这些集合运算运算，要是运算完之后这些集合不是凸集了，那我们怎么接着玩凸优化&hellip;.所以有必要知道哪些运算是保凸的。</p>
+
+<p>首先<strong>交集</strong>运算是保凸的。例如多面体就可以看做是超平面和半空间的交集。</p>
+
+<p>然后<strong>仿射函数</strong>运算是保凸的。我们先来一发定义来说明仿射函数：</p>
+
+<blockquote><p>$$$对于R^{n} 到 R^{m} 的映射f,则f(x) = Ax + b$$$</p></blockquote>
+
+<p>仿射函数以及仿射函数的逆都是保凸的。可以看出来仿射函数其实就是线性变换，把一个集合中的所有的点经过线性变换到另一个点，直觉上自然还是凸的。当然也可以祭出定义大法来证明~</p>
+
+<p>接下来是两个复杂一点的函数：<strong>透视函数</strong>和<strong>线性分式函数</strong>。</p>
+
+<p>透视函数的样子为：</p>
+
+<blockquote><p>$$$从R^{n+1}到R^{n}的透视函数P的形式为：P(x,t) = x/t, t>0$$$</p></blockquote>
+
+<p>透视函数的几何意义是在空间的一个维度为0处进行封闭，然后在该维度的原点处开一个小孔，从该维度为另一个值的线上观察空间中的像。</p>
+
+<p>而线性分式函数的定义为：</p>
+
+<blockquote><p>$$$对于从R^{n} 到 R^{m}的映射f，f(x) = (Ax + b) / (c^{T} x + d), c^{T} x + d > 0 $$$</p></blockquote>
+
+<p>线性分式函数几何意义是对点进行线性变换然后进行透视。可以看出，透视函数和仿射函数都是线性分式函数的特殊情况。这些函数以及函数的逆都是保凸的。</p>
+
+<p>接下来继续名词解释环节&hellip;我们将要讨论的是广义不等式，但是讨论之前我们先讨论他的小弟：<strong>正常锥</strong>：</p>
+
+<blockquote><p>$$$R^{n}中凸锥K是正常锥需要满足三个条件：（1）闭，即包含边界；（2）实，即内部非空；（3）尖，即不包含直线。$$$、</p></blockquote>
+
+<p>其实你一想起锥的时候脑海中一下子浮现出的锥就是一个正常锥。具体的例子有平面上包含整数轴的第一象限，半正定锥等。</p>
+
+<p>好了，搞定正常锥这个小弟之后，我们迎战大佬：<strong>广义不等式</strong>：</p>
+
+<blockquote><p>$$$通过正常锥定义的广义不等式的符号为:\preceq_k , x \preceq_k y 的充要条件是y-x \in K，等号仅在K的边界上成立。$$$</p></blockquote>
+
+<p>所以根据定义，我们可以通过y-x是不是在正常锥K里面来判断广义不等式。广义不等式是具有传递性和加法保序等性质，应用锥、凸集的性质等就可以证明了。不过需要注意的一点是，x和y有可能不具有任何偏序关系，即$$$x \npreceq y 并且 y \npreceq x。$$$</p>
+
+<p>接下来定义两个比较有意思的概念：<strong>最小元</strong>和<strong>极小元</strong>。感觉优化问题的本质就是寻找这两个东东~</p>
+
+<blockquote><p>$$$对于一个集合S，x \in S是S中相对于正常锥K的最小元如果对任意y \in S有x \preceq_{k} y$$$</p>
+
+<p>$$$对于一个集合S，x \in S是S中相对于正常锥K的极小元如果对任意y \in S，当y \preceq_{k} x时必有y=x$$$</p></blockquote>
+
+<p>然后给出两个重要定理，SVM应该就是从这里得到的灵感：</p>
+
+<p><strong>分离超平面定理</strong></p>
+
+<blockquote><p>如果C和D是不相交的凸集，那么存在一个超平面将C和D分离，即存在$$$a \neq 0和b使a^{T} x + b \leq 0 , x \in C 和a^{T} x + b \geq 0 , x \in D。$$$</p></blockquote>
+
+<p><strong>支持超平面定理</strong></p>
+
+<blockquote><p>$$$对于凸集C，在C边界的每一个点上都存在一个支持超平面。支持超平面是指对于C边界上的一个点x_0, 和超平面\{x|a^{T} x = a^{T} x_o \}，$$$
+$$$a^{T}x \leq a^{T} x_0, x \in C$$$</p></blockquote>
+
+<p>接下来讨论另一个非常高大上的东西：<strong>对偶锥和广义不等式的对偶</strong>。老样子，我们需要先定义对偶锥：</p>
+
+<blockquote><p>$$$设K为一个锥，K^{*} = \{y|x^{T} y \geq 0, \forall x \in C \}$$$</p></blockquote>
+
+<p>有的时候一个锥的对偶锥就是其自身，例如锥$$$K = R^{n}_{+}$$$的对偶锥就是其自身。除此之外，正常锥的对偶锥还是正常锥。并且，无论K是否是凸的，<strong>K的对偶锥是凸的。</strong></p>
+
+<p>在上文中我们已经知道给定一个正常锥，我们可以生成一个广义不等式。接下来我们讨论广义不等式的对偶。$$$\preceq_{K}的对偶是\preceq_{K^{*}}$$$，关于广义不等式及其对偶有下面两条重要的性质：</p>
+
+<blockquote><p>(1) $$$x \preceq_K y 当且仅当对任意\lambda \succeq_{K^{*}} 0 有\lambda^{T}x \leq \lambda^{T}y。$$$</p>
+
+<p>(2) $$$x \prec_K y 当且仅当对任意\lambda \succeq_{K^{*}} 0 和\lambda \neq 0 有\lambda^{T}x &lt; \lambda^{T}y。$$$</p></blockquote>
+
+<p>通过广义不等式的对偶，我们可以得到最小元和极小元的两种新的表达方式。</p>
+
+<blockquote><p>(1)$$$对集合S和正常锥K，x是极小元当且仅当对所有\lambda \succ_{K^{*}} 0有\lambda^{T} x是\lambda^{T} z, z \in S的唯一最小值。$$$</p>
+
+<p>(2)$$$如果对某些\lambda \succ_{K^*} 0有\lambda^{T} x是\lambda^{T} z, z \in S的最小值，x是极小元。$$$</p>
+
+<p>$$$如果x是凸集S的一个极小元，那么存在一个\lambda \succ_{K^*} 0有\lambda^{T} x是\lambda^{T} z, z \in S的唯一最小值。$$$</p></blockquote>
+]]></content>
+  </entry>
+  
+</feed>

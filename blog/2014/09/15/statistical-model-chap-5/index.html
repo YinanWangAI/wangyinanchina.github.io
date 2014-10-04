@@ -5,17 +5,17 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang=""><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>概率图模型：第二章(图论部分)-读书笔记 - 玩儿数据</title>
+  <title>统计模型：理论与实践 第五章：多元回归-特别主题 读书笔记 - 玩儿数据</title>
   <meta name="author" content="王轶楠">
   
   
-  <meta name="description" content="概率图模型：第二章-读书笔记">
-  <meta name="keywords" content="概率图模型 图论">
-  <meta property="og:title" content="概率图模型：第二章(图论部分)-读书笔记" />
+  <meta name="description" content="统计模型：理论与实践 第五章：多元回归-特别主题 笔记">
+  <meta name="keywords" content="统计模型 多元回归 广义最小二乘">
+  <meta property="og:title" content="统计模型：理论与实践 第五章：多元回归-特别主题 读书笔记" />
   <meta property="og:type" content="blog" />
-  <meta property="og:description" content="概率图模型：第二章-读书笔记">
+  <meta property="og:description" content="统计模型：理论与实践 第五章：多元回归-特别主题 笔记">
   
-  <meta property="og:url" content="http://wangyinanchina.github.io/blog/2014/09/11/pgm-chap2-graph/" />
+  <meta property="og:url" content="http://wangyinanchina.github.io/blog/2014/09/15/statistical-model-chap-5/" />
   
   
   
@@ -31,7 +31,7 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <link rel="canonical" href="http://wangyinanchina.github.io/blog/2014/09/11/pgm-chap2-graph/">
+  <link rel="canonical" href="http://wangyinanchina.github.io/blog/2014/09/15/statistical-model-chap-5/">
   <link href="/favicon.png" rel="icon">
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -131,7 +131,7 @@
 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 xmlns:dc="http://purl.org/dc/elements/1.1/"
 xmlns:foaf="http://xmlns.com/foaf/0.1/">
-<rdf:Description rdf:about="http://wangyinanchina.github.io/blog/2014/09/11/pgm-chap2-graph/">
+<rdf:Description rdf:about="http://wangyinanchina.github.io/blog/2014/09/15/statistical-model-chap-5/">
 <foaf:maker rdf:parseType="Resource">
 <foaf:holdsAccount>
 <foaf:OnlineAccount foaf:accountName="">
@@ -171,13 +171,13 @@ xmlns:foaf="http://xmlns.com/foaf/0.1/">
 
 
 
-<time datetime="2014-09-11T16:38:33+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated"></time>
+<time datetime="2014-09-15T21:28:48+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated"></time>
     
 
 <span class="categories">
   Posted in
   
-    <a class='category' href='/blog/categories/tu-lun/'>图论</a>, <a class='category' href='/blog/categories/gai-lu-tu-mo-xing/'>概率图模型</a>
+    <a class='category' href='/blog/categories/duo-yuan-hui-gui/'>多元回归</a>, <a class='category' href='/blog/categories/tong-ji-mo-xing/'>统计模型</a>
   
 </span>
 
@@ -189,7 +189,7 @@ xmlns:foaf="http://xmlns.com/foaf/0.1/">
   
   
   
-  <h1 class="entry-title" itemprop="name headline">概率图模型：第二章(图论部分)-读书笔记</h1>
+  <h1 class="entry-title" itemprop="name headline">统计模型：理论与实践 第五章：多元回归-特别主题 读书笔记</h1>
   
   
   
@@ -215,69 +215,66 @@ xmlns:foaf="http://xmlns.com/foaf/0.1/">
 <div class="entry-content">
   <div class="group">
     
-    <p>这一节主要是图的各种概念的定义。</p>
-
-<p>图是由节点和边构成的数据结构，边连接两个节点。根据边是否有边，我们可以把图分为有向图（图中所有的边都有向）和无向图（图中所有的边都无向）。</p>
-
-
+    <p>在多元回归模型：$$Y = X\beta + \epsilon\qquad(1)$$
+中，
   </div>
   <!-- more -->
   <div class="group">
-    <p>这一节主要是图的各种概念的定义。</p>
+    <p>在多元回归模型：$$Y = X\beta + \epsilon\qquad(1)$$
+中，<!--more-->我们通常假定：1、$$$\epsilon$$$独立同分布；2、$$$\epsilon有均值0和方差\sigma^{2}$$$。在这一章，我们要讨论的问题是，如果$$$\epsilon_{i}$$$之间不独立，而是服从假定：$$E(\epsilon|X) = 0_{n*1}, \quad cov(\epsilon|X) = \sigma^{2}I_{n*n} \qquad(2)$$
+将对多元回归产生怎样的影响。</p>
 
-<p>图是由节点和边构成的数据结构，边连接两个节点。根据边是否有边，我们可以把图分为有向图（图中所有的边都有向）和无向图（图中所有的边都无向）。</p>
+<p>下面将不加证明的给出</p>
 
-<!--more-->
+<blockquote><h4>Gauss-Markov定理:</h4>
+
+<p>假定X是非随机的，即$$$E(\epsilon) = 0_{n*1}, \quad cov(\epsilon) = \sigma^{2}I_{n*n}$$$,那么OLS估计量，即$$$\widehat{\beta} = (X&#8217;X)^{-1}X&#8217;Y$$$估计量是BLUE（最好线性无偏估计量，此时$$$var(\widehat{\beta})$$$最小）。</p></blockquote>
+
+<p>如果我们将约束条件变得更加严格一些，即$$E(\epsilon|X) = 0_{n*1},\quad cov(\epsilon|X) = G,\quad G是n*n的正定矩阵\qquad(3)$$
+这就是一个GLS回归模型。此时，相对于一般的回归模型，有以下两个区别：</p>
+
+<blockquote><ul>
+<li>$$$\widehat{\beta}_{OLS}不再是BLUE（最好线性无偏估计量）$$$</li>
+<li>$$$cov(\widehat{\beta}_{OLS}|X) = (X&#8217;X)^{-1}X&#8217;GX(X&#8217;X)^{-1}$$$</li>
+</ul>
+</blockquote>
+
+<p>为了解决$$$\widehat{\beta}_{OLS}不再是BLUE（最好线性无偏估计量）$$$的问题，我们可以将(1)左乘$$$G^{-&frac12;}$$$，则此时方程满足(2)，那么我们可以得到：
+$$\widehat{\beta}_{GLS} = (X&#8217;G^{-1}X)^{-1}X&#8217;G^{-1}Y\qquad(4)$$
+可以证明$$$\widehat{\beta}_{GLS}$$$条件无偏以及在X固定的情况下，$$$\widehat{\beta}_{GLS}$$$是BLUE。此时，可以计算出：
+$$cov(\widehat{\beta}_{GLS}|X) = cov((X&#8217;G^{-1}X)^{-1}X&#8217;G^{-1}(X\beta +\epsilon)|X) = (X&#8217;G^{-1}X)^{-1}X&#8217;G^{-1}GG^{-1}X(X&#8217;G^{-1}X)^{-1} = (X&#8217;G^{-1}X)^{-1}\qquad(5)$$</p>
+
+<p>在通常情况下，G未知，需要通过数据来估计。假设G是一个n*n的矩阵，那么我们要估计n*n个参数，这样待估计的参数远远超过了n个数据点，所以我们需要对G做出相应的约束。通常可以做出两种约束：</p>
+
+<ul>
+<li>认为$$$G=\lambda\Gamma$$$，其中$$$\Gamma$$$是固定的正定矩阵，所以我们只需要估计$$$\lambda$$$，$$$\lambda$$$可以用均方残差来估计</li>
+<li>认为G的对角线是2*2的正定矩阵K，这样我们只需要估计$$$K_{11},K_{12},K_{22}$$$。</li>
+</ul>
 
 
-<p>本书中我们假设图中结点的集合为$$$\mathcal{X} = \{X_{1},&hellip;,X_{n}\}$$$，边的集合为$$$\mathcal{E}$$$,有向图用$$$\mathcal{G}$$$表示，无向图用$$$\mathcal{H}$$$表示。</p>
+<p><strong>综上可以发现，实际上$$$\widehat{\beta}_{OLS}和\widehat{\beta}_{GLS}在给定X的情况下都是无偏的，我们考虑\widehat{\beta}_{GLS}的主要原因是\widehat{\beta}_{OLS}在该情况下非BLUE$$$。</strong></p>
 
-<p>对于有向边$$$X_{i}\to X_{j}$$$，我们称$$$X_{i}是X_{j}$$$的父节点，$$$X_{j}是X_{i}的子节点$$$。对于无向边$$$X_{i}- X_{j}$$$，我们称$$$X_{i}和X_{j}$$$是邻居。无论两个结点以哪种方式相连，我们均称他们相连接。</p>
+<p>假设X是n*p矩阵，有时候并不是所有p个变量都对结果有影响。所以我们需要检验对应于$$$X_{i}的\beta_{i}$$$是否显著。对于OLS模型，我们使用t分布来做这个检验。首先我们定义t分布：</p>
 
-<p>对于一个结点X，我们用$$$Pa_{X}来表示其父节点，Ch_{X}来表示其子节点，Nb_{X}来表示其邻居，用Boundary_{X}来表示Pa_{X}\cup Nb_{X}$$$</p>
+<blockquote><p>设随机变量$$$U_{1},U_{2},&hellip;为IID（独立同分布）N(0,1),则\sum_{i=1}^{d}U_{i}^{2}服从自由度为d的卡方分布\chi_{d}^{2}，则\frac{U_{d+1}}{\sqrt{d^{-1}\sum_{i=1}^{d}U_{i}^{2}}}服从自由度为d的t分布$$$</p></blockquote>
 
-<p>结点的度是指与其相连的边的数目。indegree是指指向该结点的边的数目。</p>
+<p>接下来我们不加证明的给出一个定理：</p>
 
-<p><strong>induced subgraph</strong>定义如下：</p>
+<blockquote><p>如果误差是IID $$$N(0, \sigma^{2})$$$分布，那么$$$\widehat{\beta}_{OLS}服从均值为\beta,协方差矩阵为\sigma^{2}(X&#8217;X)^{-1}$$$，而且$$$e和\widehat{\beta}_{OLS}独立，||e||^{2} 服从 \sigma^{2}\chi_{d}^{2}，其中d=n-p$$$</p></blockquote>
 
-<blockquote><p>对于图$$$\mathcal{K}=(\mathcal{X},\mathcal{E})，令X\subset \mathcal{X}，则induced\quad subgraph是指包含X以及X中结点在\mathcal{K}中所有边的图$$$</p></blockquote>
+<p>根据上述定理，我们可以得到推论：</p>
 
-<p><strong>完全子图(complete subgraph)</strong>是指图中结点两两之间均被边相连。</p>
+<blockquote><p>对于零假设：$$$\beta_{k}=0, t=\widehat{\beta}_{k}/\widehat{SE}$$$服从自由度为n-p的t分布,其中$$$\widehat{SE}=\sqrt{\widehat{\sigma}*(X&#8217;X)^{-1}_{kk}}$$$</p></blockquote>
 
-<p><strong>Upward closure</strong>是指：</p>
+<p>这样的话，我们就可以用t分布来对零假设进行假设检验了。</p>
 
-<blockquote><p>$$$X\in \mathcal{X}，当对任意x\in X, Boundary_{x} \subset X，那么包含X的最小Y是X的$$$upward closure。记为$$$\mathcal{K}^{+}[X]$$$</p></blockquote>
+<p>如果要检验多个$$$\widehat{\beta}_{i}$$$是否为0，我们则选用F检验，检验的方法如下：</p>
 
-<p><strong>根据我的理解，$$$\mathcal{K}^{+}[X] = \mathcal{K}[Y]$$$。</strong></p>
+<blockquote><p>设我们有OLS模型，如式（1），X满秩，为n*p矩阵。我们要检验<strong>零假设</strong>:p个$$$\widehat{\beta}_{i}中前p_{0}个不为0，从p_{0}+1起均为0$$$。我们需要首先计算（1）的$$$\widehat{\beta}$$$，再计算满足0假设的$$$\widehat{\beta}^{(s)}$$$，则检验统计量为：
+$$F=\frac{(||X\widehat{\beta}||^{2}-||X\widehat{\beta}^{(s)}||^{2})/p_{0}}{||e||^{2}/(n-p)}$$
+这里不加证明的给出一个结论：在零假设下，F服从Fisher F分布。</p></blockquote>
 
-<p>接下来是两个和边相关的定义。</p>
-
-<blockquote><p><strong>path</strong>:$$$X_{1},&hellip;,X_{k}在图\mathcal{K}=(\mathcal{X}, \mathcal{E})形成一个path，如果对每一个i = 1,2,&hellip;,k-1有X_{i} \to X_{i+1}或X_{i} -X_{i+1}。我们说一条path是有向的，当且仅当至少path中一条边是有向的$$$
-<strong>trail</strong>:trail定义比path宽松一点，trail允许$$$X_{i} \leftarrow X_{i+1}$$$。</p></blockquote>
-
-<p>接下来定义<strong>连通图(connected graph)</strong>：</p>
-
-<blockquote><p>对任意$$$X_{i},X_{j}之间，均有trail$$$。</p></blockquote>
-
-<p>接下来定义<strong>祖先(ancestor)</strong>和<strong>后代(descendant)</strong>：</p>
-
-<blockquote><p>我们说X和Y是祖先和后代的关系，当且仅当在$$$X_{1},&hellip;,X_{k}$$$中有一条path，其中$$$X=X_{1}，Y=X_{k}$$$。对于X的祖先和后代，我们分别用$$$Ancestor_{X}和Descendant_{X}$$$表示。</p></blockquote>
-
-<p>我们称一系列结点$$$X_{1},&hellip;,X_{n}$$$<strong>拓扑有序(topological ordering)</strong>当：如果存在$$$X_{i}\to X_{j} \in \mathcal{E}，那么i&lt;j$$$。</p>
-
-<p>最后我们讨论<strong>Cycle</strong>和<strong>Loop</strong>。如果有一条path指向自身，那就形成了一个cycle。不包含cycle的图称之为无环图。本书中最重要的图就是DAG（有向无环图），之所以重要的一个原因是有环图太复杂。（那么基因调控网络中的feed loop就不好用PGM解决了）</p>
-
-<p>如果一个图中即包含有向边，又包含无向边，我们称之为<strong>部分有向无环图</strong>。部分有向无环图可以分解为<strong>链式组成(chain component)</strong>，即对于每个链式组成，其中的结点以无向边相连，而其和组成之外的结点以有向边相连。</p>
-
-<p>loop的定义松散一些，如果有一个结点可以通过一条trail回到其自身，那就构成了loop。如果图中不含有loop，我们则称图singly connected。</p>
-
-<p>接下来定义森林和树的概念：</p>
-
-<blockquote><p>对有向图，如果每个结点有至多一个父节点，那么称之为森林，如果这个图也是联通的，那么称之为树。对无向图，如果图中不含loop，即singly connected，我们称之为森林，如果是联通的，则称之为树。</p></blockquote>
-
-<p>本节的最后一个定义是<strong>chordal graph</strong>：</p>
-
-<blockquote><p>对于图中的一个环，如果这个环包含大于等于四个结点并且有边连接环中两个不相邻的结点，那么我们称这个图为chordal graph。</p></blockquote>
+<p>这一章的最后一部分讲的是统计显著的结果也可能是不可靠的。这很容易想象，因为如果我们设定显著为0.05，那么即使零假设是对的，我们也有0.05的可能得到一个显著地结果，例如100次试验可以得到5次假阳性。除此之外，我们在做回归的时候，如果我们先用所有的变量进行回归，进而剔除掉为系数为零的变量，用剩下的变量来对模型进行回归，我们可能会得到一个比较好的$$$R^{2}$$$，但是这往往不够可靠。</p>
 
   </div>
 </div>
@@ -307,13 +304,13 @@ xmlns:foaf="http://xmlns.com/foaf/0.1/">
 
 
 
-<time datetime="2014-09-11T16:38:33+08:00" class="updated"  data-updated="true" itemprop="dateModified"></time>
+<time datetime="2014-09-15T21:28:48+08:00" class="updated"  data-updated="true" itemprop="dateModified"></time>
       
 
 <span class="categories">
   Posted in
   
-    <a class='category' href='/blog/categories/tu-lun/'>图论</a>, <a class='category' href='/blog/categories/gai-lu-tu-mo-xing/'>概率图模型</a>
+    <a class='category' href='/blog/categories/duo-yuan-hui-gui/'>多元回归</a>, <a class='category' href='/blog/categories/tong-ji-mo-xing/'>统计模型</a>
   
 </span>
 
@@ -331,7 +328,7 @@ xmlns:foaf="http://xmlns.com/foaf/0.1/">
 
 <li><a href="/blog/2014/09/16/svd/">矩阵的SVD分解</a></li>
 
-<li><a href="/blog/2014/09/15/statistical-model-chap-5/">统计模型：理论与实践 第五章：多元回归-特别主题 读书笔记</a></li>
+<li><a href="/blog/2014/09/11/pgm-chap2-graph/">概率图模型：第二章(图论部分)-读书笔记</a></li>
 
 <li><a href="/blog/2014/09/10/pgm-chap-2/">概率图模型：第二章(概率论部分)-读书笔记</a></li>
 
@@ -359,10 +356,10 @@ xmlns:foaf="http://xmlns.com/foaf/0.1/">
     
     <p class="meta">
       
-      <a class="basic-alignment left" href="/blog/2014/09/10/pgm-chap-2/" title="Previous Post: 概率图模型：第二章(概率论部分)-读书笔记">&laquo; 概率图模型：第二章(概率论部分)-读书笔记</a>
+      <a class="basic-alignment left" href="/blog/2014/09/11/pgm-chap2-graph/" title="Previous Post: 概率图模型：第二章(图论部分)-读书笔记">&laquo; 概率图模型：第二章(图论部分)-读书笔记</a>
       
       
-      <a class="basic-alignment right" href="/blog/2014/09/15/statistical-model-chap-5/" title="Next Post: 统计模型：理论与实践 第五章：多元回归-特别主题 读书笔记">统计模型：理论与实践 第五章：多元回归-特别主题 读书笔记 &raquo;</a>
+      <a class="basic-alignment right" href="/blog/2014/09/16/svd/" title="Next Post: 矩阵的SVD分解">矩阵的SVD分解 &raquo;</a>
       
     </p>
   </footer>

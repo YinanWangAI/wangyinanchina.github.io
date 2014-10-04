@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 多元回归 | 玩儿数据]]></title>
   <link href="http://wangyinanchina.github.io/blog/categories/duo-yuan-hui-gui/atom.xml" rel="self"/>
   <link href="http://wangyinanchina.github.io/"/>
-  <updated>2014-09-15T17:42:51+08:00</updated>
+  <updated>2014-10-04T16:14:38+08:00</updated>
   <id>http://wangyinanchina.github.io/</id>
   <author>
     <name><![CDATA[王轶楠]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[统计模型：理论与实践 第五章：多元回归-特别主题 读书笔记]]></title>
-    <link href="http://wangyinanchina.github.io/blog/2014/09/08/statistical-model-chap-5/"/>
-    <updated>2014-09-08T21:28:48+08:00</updated>
-    <id>http://wangyinanchina.github.io/blog/2014/09/08/statistical-model-chap-5</id>
+    <link href="http://wangyinanchina.github.io/blog/2014/09/15/statistical-model-chap-5/"/>
+    <updated>2014-09-15T21:28:48+08:00</updated>
+    <id>http://wangyinanchina.github.io/blog/2014/09/15/statistical-model-chap-5</id>
     <content type="html"><![CDATA[<p>在多元回归模型：$$Y = X\beta + \epsilon\qquad(1)$$
 中，<!--more-->我们通常假定：1、$$$\epsilon$$$独立同分布；2、$$$\epsilon有均值0和方差\sigma^{2}$$$。在这一章，我们要讨论的问题是，如果$$$\epsilon_{i}$$$之间不独立，而是服从假定：$$E(\epsilon|X) = 0_{n*1}, \quad cov(\epsilon|X) = \sigma^{2}I_{n*n} \qquad(2)$$
 将对多元回归产生怎样的影响。</p>

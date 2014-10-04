@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: 线性代数 | 玩儿数据]]></title>
+  <link href="http://wangyinanchina.github.io/blog/categories/xian-xing-dai-shu/atom.xml" rel="self"/>
+  <link href="http://wangyinanchina.github.io/"/>
+  <updated>2014-10-04T16:14:38+08:00</updated>
+  <id>http://wangyinanchina.github.io/</id>
+  <author>
+    <name><![CDATA[王轶楠]]></name>
+    <email><![CDATA[Yinan.wang@pku.edu.cn]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[矩阵的SVD分解]]></title>
+    <link href="http://wangyinanchina.github.io/blog/2014/09/16/svd/"/>
+    <updated>2014-09-16T13:27:18+08:00</updated>
+    <id>http://wangyinanchina.github.io/blog/2014/09/16/svd</id>
+    <content type="html"><![CDATA[<p>奇异值分解（SVD）在机器学习和统计中有着很广泛的应用。但是线代课上并没有着重讲解这一部分，所以今天试着自己再总结一下SVD分解。<!--more--></p>
+]]></content>
+  </entry>
+  
+</feed>
